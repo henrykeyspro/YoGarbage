@@ -1,0 +1,52 @@
+
+/* Beauty and Spa Theme by D5 Creation, www.d5creation.com
+/* =Responsive Design 
+-------------------------------------------------------------- */
+@media screen and (max-width:1278px){
+body { min-width: 0px; max-width: 100%; width: 100%; }
+#header { height: auto; }
+#header.smallheader { height: auto; position: relative; }
+.search-login, img.site-logo, h1.site-title, #main-menu-con { display: table; float: none !important; margin: 0 auto !important; position: relative; left: auto!important; right: auto !important; max-width: 100%; text-align: center; }
+.search-login { padding: 0px; text-align: center; }
+img.site-logo, h1.site-title { margin: 10px auto; width: auto; }
+#main-menu-con a { padding: 5px 7px 11px; }
+#main-menu-con a.wccart-icon { margin-top: 0px; }
+
+.box_skitter { background: transparent !important; }
+.box_skitter {position:relative;width:100%;height:33vw;background:#000;margin: 0 auto; display: block;}
+.box_skitter img { max-width:none; min-width: 100%; height:33vw; } /* Tip for stildv */
+.box_skitter_large {width:100%;height:33vw;margin: 0 auto;}
+.box_skitter .label_skitter p { font-size: 13px; }
+
+}
+
+@media screen and (max-width:1023px){
+
+#header-content { position: relative; }
+.mobile-menu { display: block; }
+#main-menu-con { display: none!important; position: absolute !important; z-index: 9999; width: 100%; left: 0; }
+#main-menu-con.resmenu { display: table !important; }
+#main-menu-con ul { margin: 0 auto !important; background: #ffffff; display: table; box-shadow: 0 0 5px 0 #e200ba;  }
+#main-menu-con li { float: none; border-bottom: 1px solid #f6f6f6; width: 200px; }
+#main-menu-con ul ul ul { left: 0; top: 97%; }
+
+.featured-boxs, .staff-box, .bqpcontainer .featured-boxs { margin: 0px; }
+.featured-box, .view-staff, .bqpcontainer .featured-box { min-width: 250px; }
+
+.content, #right-sidebar { float: none; width: auto; }
+
+#footer-sidebar, #right-sidebar {  text-align: center; }
+#footer-sidebar .first-footer-widget, #footer-sidebar .footer-widgets, #right-sidebar .widget {  min-width: 250px; width: 30%; display: inline-block; vertical-align: top; text-align: left; margin: 0 15px 15px; float: none; }
+
+.slick-arrow { display: none !important; }
+.up-bottom-border { text-align: center; }
+#contact-box-item { text-align: center; }
+.service-box, .fea-box, .floatleft, .floatright, .postnav.floatleft, .postnav.floatright { min-width: 250px; width: auto; float: none; vertical-align: top; text-align: left; }
+
+}
+
+@media screen and (max-width:699px){ 
+.box_skitter .label_skitter { display: none !important; }
+.box_skitter .info_slide_dots { bottom: -40px !important; }
+.sb-description { display: none; }
+}

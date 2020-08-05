@@ -1,0 +1,40 @@
+li{
+    display: inline-block;
+    margin: 20px;
+    margin-left: 50px;
+    color: white;
+}
+
+a{
+    color: white;
+   display: flex;
+   justify-content: left;
+   justify-items: left;
+   margin-right: 10px;
+   text-decoration: none;
+   font-weight:400;
+}
+a:hover{
+ color: red;
+}
+.menu{
+   margin-top: 5px;
+    background-color: blue;
+}
+.list{
+    float: right;
+}
+.logo{
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    
+}
+
+.sliders{
+    background-image: url(../Assets/images.jpg);
+    height: 500px;
+    width: 1350px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

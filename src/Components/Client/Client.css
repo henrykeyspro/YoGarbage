@@ -1,0 +1,30 @@
+.style{
+    margin-top: 2px;
+    padding-left: 50px;
+    padding-bottom: 5px;
+
+}
+.clients{
+    margin-top: 5px;
+    
+}
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: maroon;
+}
+Button{
+text-align: left;
+}
+.clients{
+    left:30%;
+    right: 30%;
+    border: 20px;
+    border-radius: 30px;
+    background-color: rgba(68, 67, 67, 0.05);
+    margin-left: 35%;
+    margin-right: 35%;
+    height: 80%;
+
+    margin-top: 0.5%;
+    overflow-x: hidden;
+}

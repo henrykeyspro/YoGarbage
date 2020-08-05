@@ -1,0 +1,18 @@
+.fd{
+    color: black;
+     display: list-item;
+     /* margin-right: 620px; */
+     margin-left: 620px;  
+    text-align: justify;
+    /* background-color: lightcyan; */
+}
+.dg{
+    text-align: justify;
+    display: list-item;
+    color: black;
+    margin-left: 400px;
+    /* background-color: lightcyan; */
+}
+h2{
+    color: maroon;
+}
