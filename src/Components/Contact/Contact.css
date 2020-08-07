@@ -28,3 +28,24 @@ nantume{
 footer{
     bottom: 0 ;
 }
+.contact{
+   margin-right: 300px;
+   /* margin-left: 50px; */
+}
+/* .mobileForm{
+   display: flex;
+   justify-content: center;
+   justify-items: center;
+    margin-top: 910px;
+} */
+
+/* @media only screen and (max-width: 600px) {
+    .mobileForm {
+        margin-top: 910px;
+        width:100%;
+        right: 100px;
+    }
+    .contact{
+        text-align: center;
+    }
+} */

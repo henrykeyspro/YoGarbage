@@ -76,7 +76,7 @@ const HomeMenu = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-        <MenuItem
+        {/* <MenuItem
          onClick={handleMenuClose}>
              <NavLink to='/signUp' >
                 Create account
@@ -85,7 +85,7 @@ const HomeMenu = () => {
       <MenuItem 
       onClick={handleMenuClose}>
           <NavLink to ='/login'>Login</NavLink>
-        </MenuItem>
+        </MenuItem> */}
     </Menu>
   );
 
@@ -106,15 +106,15 @@ const HomeMenu = () => {
       <MenuItem>
         <NavLink to='/about' style={{color: 'black'}}>About</NavLink>
       </MenuItem>
-      <MenuItem>
+      {/* <MenuItem>
         <NavLink to='/client' style={{color: 'black'}}>Client</NavLink>
-      </MenuItem>
+      </MenuItem> */}
       <MenuItem>
-        <NavLink to='/service' style={{color: 'black'}}>Services</NavLink>
+        <NavLink to='/services' style={{color: 'black'}}>Services</NavLink>
       </MenuItem><MenuItem>
         <NavLink to='/contact' style={{color: 'black'}}>Contact</NavLink>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      {/* <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
@@ -124,7 +124,7 @@ const HomeMenu = () => {
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
-      </MenuItem>
+      </MenuItem> */}
     </Menu>
   );
 
@@ -140,7 +140,6 @@ const HomeMenu = () => {
           </IconButton>
           <IconButton>
           <NavLink to='/' style={{color: 'white'}}><img src={logo} alt='logo' className='logo'/></NavLink>
-            {/* <img src={logo} alt='logo' className='logo'/> */}
           </IconButton>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
@@ -151,10 +150,7 @@ const HomeMenu = () => {
             <NavLink to='/' style={{color: 'white'}}>Home</NavLink>
             </IconButton>
             <IconButton color="inherit">
-            <NavLink to='/client' style={{color: 'white'}}>Client</NavLink>
-            </IconButton>
-            <IconButton color="inherit">
-            <NavLink to='/service' style={{color: 'white'}}>Service</NavLink>
+            <NavLink to='/services' style={{color: 'white'}}>Service</NavLink>
             </IconButton>
             <IconButton color="inherit">
             <NavLink to='/contact' style={{color: 'white'}}>Contact </NavLink>
@@ -170,7 +166,7 @@ const HomeMenu = () => {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              {/* <AccountCircle /> */}
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
