@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import gar from '../Assets/gar.jpg'
+import slider1 from './sliders/slider1.jpg'
 // import SimpleImageSlider from "react-simple-image-slider";
 import '../Home/Home.css'
-import Sliders from './slider'
+
 class Home extends Component{
     render(){
         return(
             <div>
-                <Sliders/>
+              <img src={slider1} alt='slider' className='slide' />
                 <div className='bod'>
                 <h1> Garbage collection App
                     </h1>     
@@ -28,7 +29,7 @@ class Home extends Component{
                 <p>
                     To solve the problems and burdens of garbage. <br />
                     To make the city A better place for every one.<br />
-                    Conviniency : anytime , anywhere from your handy device you can schedule or request for a collection service .<br/>
+                    Conviniency anytime  anywhere from your handy device you can schedule or request for a collection service .<br/>
                 </p>
                 </div>
             </div>

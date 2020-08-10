@@ -16,6 +16,31 @@ import Home from '../Components/Home/Home';
 import HomeMenu from '../Components/Menu/Menu'
 import Contact from '../Components/Contact/Contact';
 import About from '../Components/About/About'
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
+import Admin from '../Admin/Admin'
+import Box from '@material-ui/core/Box';
+function Copyright() {
+  return (
+    <Typography 
+      variant="body2" 
+      color="textSecondary" 
+      align="center" 
+      style={{
+        color: 'black',
+        marginTop: '-50px'
+      }}
+      >
+      {'Copyright © '}
+      <Link color="inherit" href="/">
+        YoGarbage
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
+
 class App extends Component{
   render(){
     return(
@@ -30,14 +55,22 @@ class App extends Component{
             <Route path ='/signUp' component={Phone}/>
             <Route path ='/about' component={About} />
             {/* <Route path ='/login' component={Login} /> */}
+            
             <Route path ='/contact' component={Contact} />
+            <Route path ='/admin' component={Admin} />
+
 
             </Switch>
+            <Box mt={8}>
+            <Copyright />
+          </Box>
         </Router>
        <span>
+         {/* <hr  style={{border:"1px solid blue" , borderRight:'1px solid blue', borderLeft:'1px solid blue' }}/>
         <footer className='footer'>
+          
           <p> &copy; YoGarbage All Rights reserved </p>
-        </footer>
+        </footer> */}
       </span>
       </div> 
       

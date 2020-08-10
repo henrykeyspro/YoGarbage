@@ -1,51 +1,41 @@
-.icons{
+/* /* .icons{
     margin: 5px;  
     margin-right: 9px;  
+} */
+.headerr{
+    margin-right: 300px;
 }
-.para{
-    font-size:larger ;
-    
+
+.header{
+    margin-right: 170px;
+    margin-top: -20px;
 }
-nantume{
-    background-attachment: fixed;
-    padding:100%
-}
-.haz{
-    margin-left: 40px;
-}
-.him{
-    margin-right: 50px;
-}
-.her{
-    margin-left: 40px;
-}
-.mine{
-    margin-left: 2px;
-}
-.yours{
-    margin-right: 20px;
-}  */
+
 footer{
     bottom: 0 ;
 }
-.contact{
-   margin-right: 300px;
-   /* margin-left: 50px; */
-}
-/* .mobileForm{
-   display: flex;
-   justify-content: center;
-   justify-items: center;
-    margin-top: 910px;
-} */
 
-/* @media only screen and (max-width: 600px) {
+.mobileForm{
+   display: inline;
+   margin-right: -70px;
+}
+
+.desktopform{
+    margin-left: -70px;
+}
+.me{
+    margin-right: 260px;
+}
+
+@media only screen and (max-width: 600px) {
     .mobileForm {
-        margin-top: 910px;
         width:100%;
-        right: 100px;
+        
     }
     .contact{
-        text-align: center;
+        text-align: left;
     }
-} */
+    .head{
+        width: 100%;
+    }
+} 

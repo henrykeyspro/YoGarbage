@@ -30,6 +30,10 @@ a:hover{
     border-radius: 10px;
     
 }
+.slide{
+    height: 500px;
+    width: 100%;
+}
 
 .sliders{
     background-image: url(../Assets/images.jpg);

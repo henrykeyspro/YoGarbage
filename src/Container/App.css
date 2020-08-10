@@ -15,7 +15,9 @@ button{
   border-style: none;
 }
 .footer{
+  background-color: blue;
   position: absolute ;
+  
   bottom: 0;
   margin-left: 35%;
 

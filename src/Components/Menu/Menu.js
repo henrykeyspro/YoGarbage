@@ -13,6 +13,7 @@ import logo from '../Assets/logo.jpg';
 import { NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
+
   grow: {
     flexGrow: 1,
   },
@@ -172,7 +173,7 @@ const HomeMenu = () => {
           <div className={classes.sectionMobile}>
             <h4 style={{marginRight: '30px'}}>Yo-Garbage</h4>
             <IconButton>
-                <HomeIcon style={{marginTop: '5px', marginRight: '20px', color: 'white'}} />
+                <HomeIcon style={{marginTop: '5px', marginRight: '5px', color: 'white'}} />
             </IconButton>
             <IconButton
               aria-label="show more"

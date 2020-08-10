@@ -1,16 +1,27 @@
-import React, { Component } from 'react';
-import logo from '../Assets/logo.jpg'
+import React from 'react'
+import { NavLink } from 'react-router-dom';
 import Menu from '../Menu/Menu'
-import './About.css';
+import './About.css'
+import henry from './Assets/henry.jpg'
+import angel from './Assets/angel.jpg'
+import ronald from './Assets/ronald.jpg'
 
 
-class About extends Component{
-    render(){
-        return(
-            <div>
-                <h1>About Us</h1>
 
-                <p>YoGarbage is an established company with 
+const About = () => {
+   const Styles = {
+       fontWeight : 'bolder',
+       fontSize : 'larger',
+       margin: '900px',
+   }
+return (
+    <div>
+      
+        <center>
+        <h1 style={{color:'blue'}}>About Us</h1>
+        <span style={Styles}>
+            
+        <p style={{textAlign:"left"}}>YoGarbage is an established company with 
                     a legal entity. <br /> 
                     Registered in 2019 with Registrar of Companies – Uganda<br />
                     and Uganda Registration Service Bureau(URSB),
@@ -22,30 +33,65 @@ class About extends Component{
                     Cleaning, Waste handling, etc 
                     to increase timely services and efficiency <br />
                      to our clients</p>
-                <h2>Our Values</h2>
-                     <div>
-                     <ul>
-                       <li className='fd'>Quality work</li>
-                       <li className='fd'>Efficiency</li>
-                       <li className='fd'>Quick Services</li>
-                       <li  className='fd'>Confidentiality</li>
-                       <li className='fd'>Honesty</li>
-                     </ul>
-                    </div>
-                    <h2><strong>Strategic Objectives</strong></h2>
-                    <ul>
-                     <li className='dg'>To ensure quality service and customer satisfaction year after year.</li>
-                     <li className='dg'>To ensure a clean and waste free environment.</li>
-                     <li className='dg'>To ensure timely delivery of services.</li>
-                     <li className='dg'>To aim at exceeding our customers expectations</li>
-                     <li className='dg'>To focus on the use to environmentally friendly machinery, equipments and tools.</li>
-                     <li className='dg'>To adhere to safety measures during execution of our duties</li>
-                     <li className='dg'>To offer consistent competitive prices to our customers.</li>
+
                      
-                    </ul>
-                <hr/>
-            </div>
-        )
-    }
+                     
+                         <h2 style={{color:'blue'}}>Our Values</h2>
+                         <div>
+                             
+                       <p >Quality work</p>
+                       <p className='fd'>Efficiency</p>
+                       <p className='fd'>Quick Services</p>
+                       <p  className='fd'>Confidentiality</p>
+                       <p className='fd'>Honesty</p>
+                    
+                         </div>
+        </span>
+
+        </center>
+
+    <h1 style={{color: 'blue',}}> Our Team       </h1>
+    <div className="row">
+    <div className="column">
+        <div className="pro">
+        <img src={henry} alt="" style={{width: '150px', height: '150px', borderRadius: '5px'}} />
+        <div className="container">
+            <h2>Nsubuga Henry</h2>
+            <p className="title">Developer</p>
+            <p>Senior software Developer at skylla connect ug</p>
+            <p>nsubugahenrymicheal@gmail.com</p>
+            <p><button className="button">Contact</button></p>
+        </div>
+        </div>
+    </div>
+
+    <div className="column">
+        <div className="pro">
+        <img src={angel} alt="" style={{width: '200px', height: '150px', borderRadius: '5px'}} />
+        <div className="container">
+            <h2>Nantume Angel</h2>
+            <p className="title">Developer</p>
+            <p>Senior software Developer at Skylla connect ug</p>
+            <p>nantumeangel@gmail.com</p>
+            <p><button className="button">Contact</button></p>
+        </div>
+        </div>
+    </div>
+
+    <div className="column">
+        <div className="pro">
+        <img src={ronald} alt="" style={{width: '200px', height: '150px', borderRadius: '5px'}} />
+        <div className="container">
+            <h2>Bukenya Ronald</h2>
+            <p className="title">Developer</p>
+            <p>Senior software Developers at skylla connect ug</p>
+            <p>bukenyaronald@gmail.com</p>
+            <p><button className="button">Contact</button></p>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+)
 }
 export default About;

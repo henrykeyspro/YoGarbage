@@ -16,7 +16,7 @@ class Sliders extends Component{
     render(){
         return(
         <div>
-        <AliceCarousel autoPlay autoPlayInterval="1000">
+        <AliceCarousel autoPlay autoPlayInterval="1000" style={{width:'100%'}}>
             <img src={slider1} className="sliderimg"/>
             <img src={slider2} className="sliderimg"/>
             <img src={slider7} className="sliderimg"/>

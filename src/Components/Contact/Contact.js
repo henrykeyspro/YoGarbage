@@ -176,7 +176,7 @@ const Contact = () => {
     
   };
   const styles = {
-    margin :'5px'
+    margin :'10px'
 
   }
 
@@ -215,6 +215,7 @@ const Contact = () => {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
           <form className='contact' onSubmit={validate}>
+                      <div className='headerr'>
                       <h1>Contact Us</h1>
                         <p className='para'>We always want to hear from you<br />
                         please find us on the contacts below.....</p>
@@ -224,19 +225,20 @@ const Contact = () => {
                       <p className='para'>P.O.Box 1234 Kampala - Uganda</p>
                         <strong><h2><strong>Call us on:</strong></h2></strong> 
                     
-                      <p>
+                      </div>
+                      <p className='me'>
                       <PhoneInTalk 
-                      className='me'
+                      
                       color='primary'
                       style={{
                         color:'blue',
                       }}
                      />
-                      0349674890
+                      +256 753473059
                      </p>
-                     <p>
+                     <p className='me'>
                      <PhoneInTalk 
-                      className='me'
+                      
                       color='primary'
                       style={{
                         color:'blue',
@@ -245,68 +247,22 @@ const Contact = () => {
                      />
                       +256 704798562 
                      </p>
-                      <p>
-                      <WhatsApp 
+                     <p className='me'>
+                       <WhatsApp 
+                      
                       color='primary'
                       style={{
                         color:'lightgreen'
                       }}
                       /> 
-                      078847554555
+                      +256 755592204</p>
                       
-                      <Twitter
-                      className='haz' 
-                      variant='contained'
-                      color='primary'
-                       style={{
-                        color:'lightBlue'
-                      }}
-                      />
-                     yoGarbage@twitt.com
-                      </p>
-                    
-                      <p>
-                      <Instagram
-                      className='hiz' 
-                       color='primary'
-                       style={{
-                        color:'red'
-                      }}
-                      />
-                      yoGarbage@insta.ug
-                      
-                      <Facebook
-                      className='haz'  
-                      color='primary'
-                       style={{
-                        color:'blue'
-                      }}
-                      />
-                      yoGarbage
-                      </p>
-                     
-                      <p>
-                      <Email
-                      color='primary'
-                       style={{
-                        color:'red'
-                      }}
-                      />
-                      yogargage@gmail.co.ug
-                      
-                      <Language 
-                      className='her'
-                      color='primary'
-                      style={{
-                        color:'blue'
-                      }}
-                      />
-                      http:// yogarbage.co.ug
-                      </p>
+                      <br />
                      
                   </form>
-                  <form>
+                  <form className='desktopform'>
                     <h3>Introduce Yourself</h3>
+                    <p style={{color:'red'}}>{nameError}</p>
                     
                     <TextField  
                       variant='outlined'
@@ -324,7 +280,7 @@ const Contact = () => {
                      
                       
                     />
-                   <p style={{color:'red'}}>{nameError}</p>
+                   
                     <TextField  
                       variant='outlined'
                       label='LastName'
@@ -334,11 +290,10 @@ const Contact = () => {
                       autoFocus
                       value={LName}
                       onChange={LNameHandler}
-
                       required
                       style={styles}
                     />
-                    <h3> How Can We Contact You ?</h3>
+                   < h3> How Can We Contact You ?</h3>
                     <TextField  
                       variant='outlined'
                       label='Email'
@@ -431,34 +386,35 @@ const Contact = () => {
             You Agree To The Storage And Handling Of Your Information <br/>
             By This Website As Governed By Our Privacy Policy.</p>
           <br/>
-          <Button variant='contained' color='primary' onClick={buttonHandler}type='submit'>Submit</Button>
+          <Button variant='contained' color='primary' onClick={buttonHandler}type='submit'> <NavLink to ='/admin'>Submit</NavLink></Button>
                   </form>
           </div>
           <div className={classes.sectionMobile}>
               <div>
               <form className='contact'>
                       <h1>Contact Us</h1>
-                        <p className='para'>We always want to hear from you<br />
+                        <p className='mobilepara'>We always want to hear from you<br />
                         please find us on the contacts below.....</p>
                         <h2><strong>Location</strong></h2>
-                      <p className='para'>Skylla building, plot 23/45 </p>
-                      <p className='para'>Mpala, Entebbe road opposite Stabex petro station </p>
-                      <p className='para'>P.O.Box 1234 Kampala - Uganda</p>
+                      <p className='mobilepara'>Skylla building, plot 23/45 </p>
+                      <p className='mobilepara'>Mpala, Entebbe road opposite Stabex petro station </p>
+                      <p className='mobilepara'>P.O.Box 1234 Kampala - Uganda</p>
                         <strong><h2><strong>Call us on:</strong></h2></strong> 
                     
-                      <p>
+                     
+                        <p>
                       <PhoneInTalk 
-                      className='mes'
+                      className='me'
                       color='primary'
                       style={{
                         color:'blue',
                       }}
                      />
-                      0349674890
+                      +256 753473059
                      </p>
                      <p>
                      <PhoneInTalk 
-                      className='mes'
+                      className='me'
                       color='primary'
                       style={{
                         color:'blue',
@@ -467,64 +423,14 @@ const Contact = () => {
                      />
                       +256 704798562 
                      </p>
-                      <p>
                       <WhatsApp 
                       color='primary'
                       style={{
                         color:'lightgreen'
                       }}
                       /> 
-                      078847554555
-                      
-                      <Twitter
-                      className='hazs' 
-                      variant='contained'
-                      color='primary'
-                       style={{
-                        color:'lightBlue'
-                      }}
-                      />
-                     yoGarbage@twitt.com
-                      </p>
-                    
-                      <p>
-                      <Instagram
-                      className='hizs' 
-                       color='primary'
-                       style={{
-                        color:'red'
-                      }}
-                      />
-                      yoGarbage@insta.ug
-                      
-                      <Facebook
-                      className='hazs'  
-                      color='primary'
-                       style={{
-                        color:'blue'
-                      }}
-                      />
-                      yoGarbage
-                      </p>
-                     
-                      <p>
-                      <Email
-                      color='primary'
-                       style={{
-                        color:'red'
-                      }}
-                      />
-                      yogargage@gmail.co.ug
-                      
-                      <Language 
-                      className='hers'
-                      color='primary'
-                      style={{
-                        color:'blue'
-                      }}
-                      />
-                      http:// yogarbage.co.ug
-                      </p>
+                      +256 755592204
+                      <br />
                      
                   </form>
               </div><br/>
@@ -540,6 +446,7 @@ const Contact = () => {
                       value={FName}
                       onChange={FNameHandler}
                       required
+                      style={styles}
                       
                       
                     />
@@ -550,6 +457,7 @@ const Contact = () => {
                       value={LName}
                       onChange={LNameHandler}
                       required
+                      style={styles}
                     />
                     <h3> How Can We Contact You ?</h3>
                     <TextField  
@@ -558,6 +466,7 @@ const Contact = () => {
                       value={email}
                       onChange={emailHandler}
                       required
+                      style={styles}
                       />
                     <TextField  
                       variant='outlined'
@@ -565,6 +474,7 @@ const Contact = () => {
                       value={Phone}
                       onChange={phoneHandler}
                       required
+                      style={styles}
                     />
                     <h3>Preffered Method Of Contact</h3>
                     <input
@@ -588,6 +498,7 @@ const Contact = () => {
                       value={District}
                       onChange={DistrictHandler}
                       required
+                      style={styles}
                     />
                      <TextField  
                       variant='outlined'
@@ -595,6 +506,7 @@ const Contact = () => {
                       value={city}
                       onChange={cityHandler}
                       required
+                      style={styles}
                     />
                    <h3>Additional Information About Your Request</h3>
                    <TextField 
@@ -604,12 +516,12 @@ const Contact = () => {
                      onChange={DescriptionHandler}
                      optional
                    />
-                   <p>Please provide any information that may help us route your request.</p>
+             
                     
                    <FormControlLabel
             control={<
                 Checkbox
-                style={{marginLeft: '-180px', marginBottom: '-70px'}}
+                style={{marginLeft: '-250px', marginBottom: '-120px'}}
                 color="primary" />}
           />
           <p>Agree to terms and By Submitting This Form,
@@ -619,9 +531,10 @@ const Contact = () => {
             By This Website As Governed By Our Privacy Policy.
             </p>
           <br/>
+          
           <Button 
            variant='contained' color ='primary'
-          >Submit</Button>
+          ><NavLink to ='/admin'>Submit</NavLink></Button>
                   </form>
                 </div>
             
