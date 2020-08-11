@@ -20,6 +20,11 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Admin from '../Admin/Admin'
 import Box from '@material-ui/core/Box';
+import Order from '../Components/Order/Order'
+import Next from '../Components/Next/Next';
+import PaymentForm from '../Components/paymentForm/paymentForm';
+import CompanyForm from '../Components/CompanyForm/CompanyForm';
+
 function Copyright() {
   return (
     <Typography 
@@ -45,6 +50,7 @@ class App extends Component{
   render(){
     return(
       <div>
+     
        
         <Router>
         <HomeMenu />
@@ -54,12 +60,13 @@ class App extends Component{
             <Route path ='/services' component={Services} />
             <Route path ='/signUp' component={Phone}/>
             <Route path ='/about' component={About} />
-            {/* <Route path ='/login' component={Login} /> */}
-            
+            <Route path ='/next' component={Next} />
+            <Route path ='/paymentForm' component={PaymentForm} />
             <Route path ='/contact' component={Contact} />
             <Route path ='/admin' component={Admin} />
-
-
+            <Route path ='/order' component={Order} />
+            <Route path='/companyform' component={CompanyForm} />
+        
             </Switch>
             <Box mt={8}>
             <Copyright />

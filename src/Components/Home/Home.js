@@ -3,7 +3,9 @@ import gar from '../Assets/gar.jpg'
 import slider1 from './sliders/slider1.jpg'
 // import SimpleImageSlider from "react-simple-image-slider";
 import '../Home/Home.css'
-
+import Button from '@material-ui/core/Button'
+import {NavLink} from 'react-router-dom'
+import NextPage from '../Next/Next'
 class Home extends Component{
     render(){
         return(
@@ -32,6 +34,7 @@ class Home extends Component{
                     Conviniency anytime  anywhere from your handy device you can schedule or request for a collection service .<br/>
                 </p>
                 </div>
+                <NextPage />    
             </div>
         )
     }

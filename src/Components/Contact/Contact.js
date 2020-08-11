@@ -61,100 +61,25 @@ const Contact = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  let [FName, setFName] = useState(' ');
-  let [nameError , setnameError] = useState('');
-  const [LName , setCompany] = useState(' ');
-  const [email , setEmail] = useState(' ');
-  const [Phone , setPhone] = useState(' ');
-  const [errors , setErrors] = useState([])
-  const [District , setDistrict] = useState(' ');
-  const [city , setCity] = useState(' ');
-  const [Description , setDescription] = useState(' ');
-   
-  const FNameHandler=(event)=>{
-    let num = event.target.name
-    let val = event.target.value
-    let err = ''
-    if(val != '' && Number(val) ){
-      err = <strong><p>Name must contain letters</p></strong>
-    }
-    setFName([num]=val)
-    setnameError(nameError = err)
-  }
+    
+  // const FNameHandler=(event)=>{
+  //   let num = event.target.name
+  //   let val = event.target.value
+  //   let err = ''
+  //   if(val != '' && Number(val) ){
+  //     err = <strong><p>Name must contain letters</p></strong>
+  //   }
+  //   setFName([num]=val)
+  //   setnameError(nameError = err)
+  // }
   // const errorHandler=()=>{
   //   setErrors( 
   
   //   )
   // }
 
-  const validate = (email , FName , LName ,values ,Phone , District , city  )  => {
-    const errors = [];
-  // First Name validation
-    if (FName.length===0) {
-      errors.push(<p>Field required</p>)
-    } else if (FName.length < 3) {
-      errors.push(<p>Name is too short</p>);
-    }else if(FName == Number){
-      errors.push(<p>Name is not a Number</p>)
-    }
-    // Last Name validation
-    if(LName.length===0){
-      errors.push(<p>Field Required</p>)
-    }
-    else if(LName.length < 3){
-      errors.push(<p>Name is too short</p>)
-    }
-    else if(LName == Number){
-      errors.push(<p>Name is not a Number</p>)
-    }
-    // email validation 
-    if (email == !typeof(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/)) {
-      errors.push(<p>Invalid email address</p>)
-    }
-    // Phone validation
-    if(Phone.length > 10 || Phone.length < 10 ){
-      errors.push(<p>InValid Phone Number</p>)
-    }else if(Phone.length ===0){
-      errors.push(<p>Please Enter your Phone Number</p>)
-    }
-    if(District.length===0){
-      errors.push(<p>Please Enter Your District</p>)
-    }else if(District== Number){
-      errors.push(<p>District is not a Number</p>)
-    }
-    if(city.length===0){
-      errors.push(<p>Please Enter Your city</p>)
-    }else if(city == Number){
-      errors.push(<p>city is not a Number</p>)
-    }
-
+ 
   
-    return errors;
-  };
-  
-
-  const LNameHandler =(event)=> {
-    setCompany(event.target.value)
-  }
-   const emailHandler = (event)=>{
-   setEmail(event.target.value)
-  }
-  const phoneHandler=(event) =>{
-    setPhone(event.target.value)
-  }
-  const DistrictHandler =(event) =>{
-    setDistrict(event.target.value)
-  }
-  const cityHandler=(event)=>{
-    setCity(event.target.value)
-  }
-  const DescriptionHandler=(event)=>{
-    setDescription(event.target.value)
-  }
-  const buttonHandler = ()=>{
-      alert(`you are submitting as: ${FName} ${LName}` );
-    }
-
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -214,7 +139,7 @@ const Contact = () => {
         
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-          <form className='contact' onSubmit={validate}>
+          <form className='contact' >
                       <div className='headerr'>
                       <h1>Contact Us</h1>
                         <p className='para'>We always want to hear from you<br />
@@ -260,134 +185,7 @@ const Contact = () => {
                       <br />
                      
                   </form>
-                  <form className='desktopform'>
-                    <h3>Introduce Yourself</h3>
-                    <p style={{color:'red'}}>{nameError}</p>
-                    
-                    <TextField  
-                      variant='outlined'
-                      label='FirstName'
-                      name='FName'
-                      type='FName'
-                      autoComplete
-                      autoFocus
-                      name='fullname'
-                      value={FName}
-                      onChange={FNameHandler}
-                      required='required'
-                      style={styles}
-                      error ={nameError}
-                     
-                      
-                    />
-                   
-                    <TextField  
-                      variant='outlined'
-                      label='LastName'
-                      name='LName'
-                      type='LName'
-                      autoComplete
-                      autoFocus
-                      value={LName}
-                      onChange={LNameHandler}
-                      required
-                      style={styles}
-                    />
-                   < h3> How Can We Contact You ?</h3>
-                    <TextField  
-                      variant='outlined'
-                      label='Email'
-                      name='email'
-                      type='email'
-                      autoComplete
-                      autoFocus
-                      value={email}
-                      onChange={emailHandler}
-                      required
-                      style={styles}
-
-                    />
-                    <TextField  
-                      variant='outlined'
-                      label='phone'
-                      name='phone'
-                      type='phone'
-                      autoComplete
-                      autoFocus
-                      onChange={phoneHandler}
-                      value={Phone}
-                      required
-                      style={styles}
-
-                    />
-                    <h3>Preffered Method Of Contact</h3>
-                    <input
-            type="radio"
-            value="black"
-            name="color"
-          />
-            
-            <label className="radio"><b>Email</b></label>
-            <input
-                type="radio" 
-                value="red" 
-                name="color"
-            />
-    
-            <label className="radio"><b>Phone</b></label>
-            <h3>Where Do You Need Our Services?</h3>
-            <TextField  
-                      variant='outlined'
-                      label='District'
-                      name='District'
-                      type='District'
-                      autoComplete
-                      autoFocus
-                      onChange={DistrictHandler}
-                      value={District}
-                      required
-                      style={styles}
-                    />
-                     <TextField  
-                      variant='outlined'
-                      label='City'
-                      name='city'
-                      type='city'
-                      autoComplete
-                      autoFocus
-                      value={city}
-                      onChange={cityHandler}
-                      required
-                      style={styles}
-                    />
-                   <h3>Additional Information About Your Request</h3>
-                   <label>Description: </label>
-                   <TextareaAutosize
-                     variant='standard'
-                     label='Description'
-                     name='Description'
-                     type='Description'
-                     autoComplete
-                     autoFocus
-                     value={Description}
-                     onChange={DescriptionHandler}
-                     optional
-                  
-                   />
-                   <p>Please provide any information that may help us route your request.</p>
-                    
-                   <FormControlLabel
-            control={<
-                Checkbox
-                style={{marginLeft: '-180px', marginBottom: '-70px'}}
-                color="primary" />}
-          />
-          <p>  Agree to terms and By Submitting This Form,<br/>
-            You Agree To The Storage And Handling Of Your Information <br/>
-            By This Website As Governed By Our Privacy Policy.</p>
-          <br/>
-          <Button variant='contained' color='primary' onClick={buttonHandler}type='submit'> <NavLink to ='/admin'>Submit</NavLink></Button>
-                  </form>
+                 
           </div>
           <div className={classes.sectionMobile}>
               <div>
@@ -437,105 +235,7 @@ const Contact = () => {
                   
                   <br/>
                 <div>
-                <form className='mobileForm'>
-                    <h3>Introduce Yourself</h3>
-                    <TextField 
-                      className='bobi'  
-                      variant='outlined'
-                      label='FisrtName'
-                      value={FName}
-                      onChange={FNameHandler}
-                      required
-                      style={styles}
-                      
-                      
-                    />
-                    <TextField 
-                      className='bobi' 
-                      variant='outlined'
-                      label='LastName'
-                      value={LName}
-                      onChange={LNameHandler}
-                      required
-                      style={styles}
-                    />
-                    <h3> How Can We Contact You ?</h3>
-                    <TextField  
-                      variant='outlined'
-                      label='Email'
-                      value={email}
-                      onChange={emailHandler}
-                      required
-                      style={styles}
-                      />
-                    <TextField  
-                      variant='outlined'
-                      label='phone'
-                      value={Phone}
-                      onChange={phoneHandler}
-                      required
-                      style={styles}
-                    />
-                    <h3>Preffered Method Of Contact</h3>
-                    <input
-            type="radio"
-            value="black"
-            name="color"
-          />
-            
-            <label className="radio"><b>Email</b></label>
-            <input
-                type="radio" 
-                value="red" 
-                name="color"
-            />
-    
-            <label className="radio"><b>Phone</b></label>
-            <h3>Where Do You Need Our Services?</h3>
-            <TextField  
-                      variant='outlined'
-                      label='District'
-                      value={District}
-                      onChange={DistrictHandler}
-                      required
-                      style={styles}
-                    />
-                     <TextField  
-                      variant='outlined'
-                      label='City'
-                      value={city}
-                      onChange={cityHandler}
-                      required
-                      style={styles}
-                    />
-                   <h3>Additional Information About Your Request</h3>
-                   <TextField 
-                     variant='standard'
-                     label='Description'
-                     value={Description}
-                     onChange={DescriptionHandler}
-                     optional
-                   />
-             
-                    
-                   <FormControlLabel
-            control={<
-                Checkbox
-                style={{marginLeft: '-250px', marginBottom: '-120px'}}
-                color="primary" />}
-          />
-          <p>Agree to terms and By Submitting This Form,
-            <br />
-            You Agree To The Storage And Handling Of Your Information 
-            <br />
-            By This Website As Governed By Our Privacy Policy.
-            </p>
-          <br/>
-          
-          <Button 
-           variant='contained' color ='primary'
-          ><NavLink to ='/admin'>Submit</NavLink></Button>
-                  </form>
+               
                 </div>
             
           </div>

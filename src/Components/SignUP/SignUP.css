@@ -1,11 +1,7 @@
 body{
     text-align: center;
     color: black;
-    
-    /* background-image: url('../Assets/yobg1.jpg'); */
-    
     background-color: white;
-    /* background-color: rgb(255, 0, 157); */
 }
 Button{
     padding: 5px;
@@ -35,12 +31,10 @@ img{
  border: 30px;
  border-radius: 30px;       
  background-color: rgba(67, 64, 64, 0.04);                
- /* background-color: white; */
  margin-left: 500px;
  margin-right: 500px;
  height: 650px;
  margin-top: 50px;
- 
  opacity: 80%;
 }
 .PhoneInput:hover{

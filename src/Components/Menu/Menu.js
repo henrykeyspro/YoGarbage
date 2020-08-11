@@ -1,5 +1,5 @@
 import React from 'react';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -8,7 +8,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import logo from '../Assets/logo.jpg';
 import { NavLink } from 'react-router-dom';
 
@@ -77,16 +76,7 @@ const HomeMenu = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-        {/* <MenuItem
-         onClick={handleMenuClose}>
-             <NavLink to='/signUp' >
-                Create account
-            </NavLink> 
-        </MenuItem>
-      <MenuItem 
-      onClick={handleMenuClose}>
-          <NavLink to ='/login'>Login</NavLink>
-        </MenuItem> */}
+
     </Menu>
   );
 
@@ -107,25 +97,12 @@ const HomeMenu = () => {
       <MenuItem>
         <NavLink to='/about' style={{color: 'black'}}>About</NavLink>
       </MenuItem>
-      {/* <MenuItem>
-        <NavLink to='/client' style={{color: 'black'}}>Client</NavLink>
-      </MenuItem> */}
       <MenuItem>
         <NavLink to='/services' style={{color: 'black'}}>Services</NavLink>
       </MenuItem><MenuItem>
         <NavLink to='/contact' style={{color: 'black'}}>Contact</NavLink>
       </MenuItem>
-      {/* <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem> */}
+    
     </Menu>
   );
 

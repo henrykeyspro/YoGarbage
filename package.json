@@ -17,6 +17,7 @@
     "react-phone-number-input": "^3.0.24",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "react-select": "^3.1.0",
     "react-simple-image-slider": "^1.0.4",
     "react-slideshow-image": "^3.0.2"
   },
