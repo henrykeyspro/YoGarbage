@@ -40,7 +40,7 @@ html {
     outline: 0;
     display: inline-block;
     padding: 8px;
-    color: white;
+    color: silver;
     border-radius: 7px;
     background-color: black;
     text-align: center;
@@ -58,4 +58,8 @@ html {
         width: 100%;
         display: block;
     }
+    .cha{
+    text-align: left;
+    margin-left: 100px;
+}
 }

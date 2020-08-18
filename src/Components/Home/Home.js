@@ -1,42 +1,87 @@
 import React, { Component } from 'react';
-import gar from '../Assets/gar.jpg'
+import depots from '../Assets/depots.jpg'
 import slider1 from './sliders/slider1.jpg'
 // import SimpleImageSlider from "react-simple-image-slider";
 import '../Home/Home.css'
 import Button from '@material-ui/core/Button'
 import {NavLink} from 'react-router-dom'
 import NextPage from '../Next/Next'
-class Home extends Component{
-    render(){
-        return(
-            <div>
-              <img src={slider1} alt='slider' className='slide' />
-                <div className='bod'>
-                <h1> Garbage collection App
-                    </h1>     
-                <p>
-                    Yo-Garbage is a tech management company that provides waste eliminations 
-                    thus smart city solutions to businesses and communities. <br/>
-                        Garbage collection app allows individual , households and small businesses 
-                    to manage waste collection <br/> services from a hand smart phone.<br/> Request for 
-                    on-demand services , regular collection , extra pickups , rate collections
-                    of all in one olace at the same time.
-                </p>
-                <br />
-                <strong>
-                <h2>
-                    Why Yo-Garbage?
-                </h2>
-                </strong>
-                <p>
-                    To solve the problems and burdens of garbage. <br />
-                    To make the city A better place for every one.<br />
-                    Conviniency anytime  anywhere from your handy device you can schedule or request for a collection service .<br/>
-                </p>
+import Paper from '@material-ui/core/Paper'
+import {makeStyles} from '@material-ui/core'
+import ProductValues from './home2/home2';
+import Home3 from './home3/Home3';
+
+
+
+    const useStyles = makeStyles((theme) => ({
+
+       
+        sectionDesktop: {
+          display: 'none',
+          [theme.breakpoints.up('md')]: {
+            display: 'block',
+          },
+        },
+        sectionMobile: {
+          [theme.breakpoints.up('md')]: {
+            display: 'none',
+          },
+        },
+      }));
+      
+      const Home = (props) => {
+        const classes = useStyles();
+        const [anchorEl, setAnchorEl] = React.useState(null);
+        const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+      
+        const isMenuOpen = Boolean(anchorEl);
+        const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+      
+        const handleProfileMenuOpen = (event) => {
+          setAnchorEl(event.currentTarget);
+        };
+      
+        const handleMobileMenuClose = () => {
+          setMobileMoreAnchorEl(null);
+        };
+      
+        const handleMenuClose = () => {
+          setAnchorEl(null);
+          handleMobileMenuClose();
+        };
+      
+        const handleMobileMenuOpen = (event) => {
+          setMobileMoreAnchorEl(event.currentTarget);
+        };
+      
+        return (
+        <div className={classes.grow}>
+          
+            
+               <div className={classes.sectionDesktop}>
+                 <Paper elevation='10'width="95%" style={{marginRight: '40px', marginLeft: '40px', marginTop: '8px'}} >
+                   <img src={depots} alt='slider' className='slide' />
+                 </Paper>
+                  
+                  <ProductValues />
+                  <NextPage /> 
+                  <Home3 />
+                     
+                   
                 </div>
-                <NextPage />    
-            </div>
-        )
-    }
-}
+                <div className={classes.sectionMobile}>
+                <Paper elevation='10'width="95%" >
+                   <img src={depots} alt='slider' className='mobi' />
+                 </Paper>
+                  
+                  <ProductValues />
+                  <NextPage />   
+                  <Home3 />
+                </div>
+                
+            
+        </div>
+        );
+      }
+    
 export default Home;

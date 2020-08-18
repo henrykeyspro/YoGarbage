@@ -25,9 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
-    border: '1px solid gray',
-    borderRadius: '10px'
+    marginTop: theme.spacing(1)
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
@@ -35,20 +33,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Login = (props) => {
-    const[email, setEmail] = useState('')
-    const[password, setPassword] = useState('')
-
-    const passwordChangedHandler = (event) => {
-        setPassword(event.target.value)
-    }
-    const emailHandler = (event) =>{
-      setEmail(event.target.value)
-    }
-    const styles = {
-        width:'60%',
-        margin:'10px 30px 10px 30px',
-        
-    }
     const classes = useStyles();
 
   return (
@@ -58,64 +42,59 @@ const Login = (props) => {
         <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <form className={classes.form} noValidate >
-       
+        <form className={classes.form} onSubmit={props.submit} >
+        
           <TextField
-            variant="standard"
+            variant="outlined"
             margin="normal"
             required
-            name="email"
-            value={email}
-            onChange={emailHandler}
-            label="Email"
-            style={styles}
-            type="email"
-            id="email"
-            autoComplete="email"
+            name="userName"
+            value={props.username}
+            onChange={props.nameChanged}
+            label="Username"
+            style={{width:'100%'}}
+    
           />
-          
-          <br />
+            <p>{props.errorMessage}</p>
+       
           {/* TextField for inputting passord for login */}
           <TextField
-            variant="standard"
+            variant="outlined"
             margin="normal"
             required
             name="password"
-            value={password}
-            onChange={passwordChangedHandler}
+            value={props.password}
+            onChange={props.passwordChanged}
             label="Password"
             type="password"
-            style={styles}
+            style={{width:'100% '}}
             id="password"
             autoComplete="current-password"
           />
          
           <br />
-         
+          <Grid container>
+            <Grid item>
+              <NavLink to="" variant="body2" style={{  float:'left',marginRight:'-285px' , textDecoration:'none'}}>
+                {"Forgot password"}
+              </NavLink>
+            </Grid>
+          </Grid>
+      
           <Button
             type="submit"
             variant="contained"
             style={{
-              margin:'10px 30px 10px 30px'
+              width:'100% '
             }}
-            // color="primary"
-            // onClick={buttonHandler}
-            className={classes.submit}
+        
           >
             Login
           </Button>
-        
-          <br />
-          <Grid container>
-            <Grid item>
-              <NavLink to="/signUp" variant="body2" style={{marginLeft: '90px', marginTop: '-10px'}}>
-                {"Don't have account? SignUp"}
-              </NavLink>
-            </Grid>
-          </Grid>
         </form>
       </div>
     </Container>
   );
 }
 export default Login;
+

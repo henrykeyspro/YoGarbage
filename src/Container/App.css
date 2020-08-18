@@ -1,25 +1,5 @@
-.App {
-  text-align: center;
-   color: black;
-  width: 100%;
-  height: 100%;
- 
-}
 
-button{
-  margin: 5px;
-  padding: 5px;
-  background-color:chartreuse;
-  border-radius: 5px;
-  color: crimson;
-  border-style: none;
-}
-.footer{
-  background-color: blue;
-  position: absolute ;
-  
-  bottom: 0;
-  margin-left: 35%;
 
-}
+
+
 

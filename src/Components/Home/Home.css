@@ -8,14 +8,29 @@
     
 }
 .slide{
-    height: 500px;
+    height: 505px;
+    background-size: cover;
     width: 100%;
+    border-radius: 7px;
 }
 
-.sliders{
-    background-image: url(../Assets/images.jpg);
-    height: 500px;
-    width: 1350px;
+.image3{
+    background-image: url(../Assets/machine1.jpg);
+    width: 100%;
+    height: 900%;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.yogar{
+    text-align: left;
+    margin-left: 20%;
+}
+.why{
+    text-align: left;
+    margin-left: 20%;
+}
+.mobi{
+    height:200px ;
+    width:95%
 }

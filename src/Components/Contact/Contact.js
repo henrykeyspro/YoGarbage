@@ -8,7 +8,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import logo from '../Assets/logo.jpg';
 import { NavLink } from 'react-router-dom';
 import './Contact.css';
@@ -26,6 +25,7 @@ import InputLabel from '@material-ui/core/InputLabel'
 import TextareaAutosize from '@material-ui/core/TextareaAutosize'
 import Button from '@material-ui/core/Button'
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { Paper } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -61,24 +61,6 @@ const Contact = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-    
-  // const FNameHandler=(event)=>{
-  //   let num = event.target.name
-  //   let val = event.target.value
-  //   let err = ''
-  //   if(val != '' && Number(val) ){
-  //     err = <strong><p>Name must contain letters</p></strong>
-  //   }
-  //   setFName([num]=val)
-  //   setnameError(nameError = err)
-  // }
-  // const errorHandler=()=>{
-  //   setErrors( 
-  
-  //   )
-  // }
-
- 
   
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -139,54 +121,61 @@ const Contact = () => {
         
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-          <form className='contact' >
-                      <div className='headerr'>
-                      <h1>Contact Us</h1>
-                        <p className='para'>We always want to hear from you<br />
-                        please find us on the contacts below.....</p>
-                        <h2><strong>Location</strong></h2>
-                      <p className='para'>Skylla building, plot 23/45 </p>
-                      <p className='para'>Mpala, Entebbe road opposite Stabex petro station </p>
-                      <p className='para'>P.O.Box 1234 Kampala - Uganda</p>
-                        <strong><h2><strong>Call us on:</strong></h2></strong> 
-                    
-                      </div>
-                      <p className='me'>
-                      <PhoneInTalk 
-                      
-                      color='primary'
-                      style={{
-                        color:'blue',
-                      }}
-                     />
-                      +256 753473059
-                     </p>
-                     <p className='me'>
-                     <PhoneInTalk 
-                      
-                      color='primary'
-                      style={{
-                        color:'blue',
-                      }}
-                       
-                     />
-                      +256 704798562 
-                     </p>
-                     <p className='me'>
-                       <WhatsApp 
-                      
-                      color='primary'
-                      style={{
-                        color:'lightgreen'
-                      }}
-                      /> 
-                      +256 755592204</p>
-                      
-                      <br />
-                     
-                  </form>
-                 
-          </div>
+     <form className='contact' >
+
+      <div className='headerr'>
+       
+        <h1>Contact Us</h1>
+        <div>
+          <Paper elevation='20'>
+            <h2><strong>Location</strong></h2>
+            <p className='para'>Skylla building, plot 23/45 </p>
+            <p className='para'>Mpala, Entebbe road opposite Stabex petro station </p>
+            <p className='para'>P.O.Box 1234 Kampala - Uganda</p>
+          </Paper>
+
+        </div>
+        <div>
+        <Paper elevation='20'>
+         <strong><h2><strong>Call us on:</strong></h2></strong> 
+          <p className='me'>
+          <PhoneInTalk 
+          
+          color='primary'
+          style={{
+            color:'blue',
+          }}
+          />
+            +256 753473059
+          </p>
+          <p className='me'>
+          <PhoneInTalk 
+            
+            color='primary'
+            style={{
+              color:'blue',
+            }}
+            
+          />
+            +256 704798562 
+          </p>
+          <p className='me'>
+          <WhatsApp 
+        
+          color='primary'
+          style={{
+          color:'lightgreen'
+          }}
+          /> 
+          +256 755592204</p>
+      
+        </Paper>
+        </div>
+      </div>
+       
+      </form>
+          
+  </div>
           <div className={classes.sectionMobile}>
               <div>
               <form className='contact'>

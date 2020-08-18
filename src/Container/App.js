@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Login from '../Components/Login/Login'
+import Fire from './Fire';
+import LoginValidation from '../Components/Login/LoginValidation/LoginValidation'
 import Phone from '../Components/SignUP/Phone'
 import Menu from '../Components/Menu/Menu'
 import Radium from 'radium';
@@ -10,7 +11,6 @@ import {
   Switch 
 } from  'react-router-dom';
 import Services from '../Components/Services/Services'
-import Client from '../Components/Client/Client';
 // import SignUp from '../Components/SignUP/Phone';
 import Home from '../Components/Home/Home';
 import HomeMenu from '../Components/Menu/Menu'
@@ -22,6 +22,7 @@ import Admin from '../Admin/Admin'
 import Box from '@material-ui/core/Box';
 import Order from '../Components/Order/Order'
 import Next from '../Components/Next/Next';
+import './App.css'
 import PaymentForm from '../Components/paymentForm/paymentForm';
 import CompanyForm from '../Components/CompanyForm/CompanyForm';
 
@@ -32,8 +33,7 @@ function Copyright() {
       color="textSecondary" 
       align="center" 
       style={{
-        color: 'black',
-        marginTop: '-50px'
+        color: 'black',marginTop:'100px'
       }}
       >
       {'Copyright © '}
@@ -49,14 +49,13 @@ function Copyright() {
 class App extends Component{
   render(){
     return(
-      <div>
+      <div className='App'>
      
        
         <Router>
         <HomeMenu />
           <Switch>
             <Route path='/' component={Home} exact/>
-            <Route path ='/client' component={Client}/>
             <Route path ='/services' component={Services} />
             <Route path ='/signUp' component={Phone}/>
             <Route path ='/about' component={About} />
@@ -66,6 +65,7 @@ class App extends Component{
             <Route path ='/admin' component={Admin} />
             <Route path ='/order' component={Order} />
             <Route path='/companyform' component={CompanyForm} />
+            <Route path ='/login' component={LoginValidation} />
         
             </Switch>
             <Box mt={8}>

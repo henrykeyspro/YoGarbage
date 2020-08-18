@@ -10,6 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
 import logo from '../Assets/logo.jpg';
 import { NavLink } from 'react-router-dom';
+import Button from '@material-ui/core/Button'
 
 const useStyles = makeStyles((theme) => ({
 
@@ -99,9 +100,16 @@ const HomeMenu = () => {
       </MenuItem>
       <MenuItem>
         <NavLink to='/services' style={{color: 'black'}}>Services</NavLink>
-      </MenuItem><MenuItem>
+      </MenuItem>
+      <MenuItem>
         <NavLink to='/contact' style={{color: 'black'}}>Contact</NavLink>
       </MenuItem>
+       <MenuItem>
+          <NavLink to='/login' style={{color: 'black'}}>Clients </NavLink>
+        </MenuItem>
+          <MenuItem>
+            <Button variant='outlined' color='secondary' style={{padding:'2px',color:'black'}}>Login</Button>
+          </MenuItem>
     
     </Menu>
   );
@@ -109,7 +117,7 @@ const HomeMenu = () => {
   return (
     <div className={classes.grow}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar style={{backgroundColor:'white'}}>
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -117,25 +125,33 @@ const HomeMenu = () => {
             aria-label="open drawer" >
           </IconButton>
           <IconButton>
-          <NavLink to='/' style={{color: 'white'}}><img src={logo} alt='logo' className='logo'/></NavLink>
+          <NavLink to='/' style={{color: 'black',marginLeft:'-50px'}}><img src={logo} alt='logo' className='logo'/></NavLink>
           </IconButton>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <Typography className={classes.title} variant="h6" noWrap>
+            <Typography className={classes.title} variant="h4" style={{color:'black',}} noWrap>
                 Yo-Garbage
             </Typography>
+            
             <IconButton color="inherit">
-            <NavLink to='/' style={{color: 'white'}}>Home</NavLink>
+            <NavLink to='/' style={{color: 'black'}}>Home</NavLink>
             </IconButton>
             <IconButton color="inherit">
-            <NavLink to='/services' style={{color: 'white'}}>Service</NavLink>
+            <NavLink to='/services' style={{color: 'black'}}>Service</NavLink>
             </IconButton>
             <IconButton color="inherit">
-            <NavLink to='/contact' style={{color: 'white'}}>Contact </NavLink>
+            <NavLink to='/contact' style={{color: 'black'}}>Contact </NavLink>
             </IconButton>
             <IconButton>
-            <NavLink to='/about' style={{color: 'white'}}>About </NavLink>
+            <NavLink to='/about' style={{color: 'black'}}>About </NavLink>
             </IconButton>
+            <IconButton>
+            <NavLink to='/login' style={{color: 'black'}}>Clients </NavLink>
+            </IconButton>
+            <IconButton>
+                <Button variant='outlined' color='secondary' style={{padding:'2px',color:'black'}}>Login</Button>
+            </IconButton>
+          
             <IconButton
               edge="end"
               aria-label="account of current user"
@@ -148,7 +164,7 @@ const HomeMenu = () => {
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
-            <h4 style={{marginRight: '30px'}}>Yo-Garbage</h4>
+            <h4 style={{marginRight: '30px ', color:'black'}}>Yo-Garbage</h4>
             <IconButton>
                 <HomeIcon style={{marginTop: '5px', marginRight: '5px', color: 'white'}} />
             </IconButton>
@@ -159,13 +175,14 @@ const HomeMenu = () => {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              < MenuIcon />
+              < MenuIcon style={{color:'black'}} />
             </IconButton>
           </div>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
+      
     </div>
   );
 }
