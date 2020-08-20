@@ -43,11 +43,13 @@ const Login = (props) => {
           Login
         </Typography>
         <form className={classes.form} onSubmit={props.submit} >
+          <p style={{color:'red'}}>{props.errorMessage}</p>
+          <p style={{color:'green'}}>{props.successMessage}</p>
         
           <TextField
             variant="outlined"
             margin="normal"
-            required
+            // required
             name="userName"
             value={props.username}
             onChange={props.nameChanged}
@@ -55,13 +57,12 @@ const Login = (props) => {
             style={{width:'100%'}}
     
           />
-            <p>{props.errorMessage}</p>
        
           {/* TextField for inputting passord for login */}
           <TextField
             variant="outlined"
             margin="normal"
-            required
+            // required
             name="password"
             value={props.password}
             onChange={props.passwordChanged}
@@ -71,8 +72,7 @@ const Login = (props) => {
             id="password"
             autoComplete="current-password"
           />
-         
-          <br />
+ 
           <Grid container>
             <Grid item>
               <NavLink to="" variant="body2" style={{  float:'left',marginRight:'-285px' , textDecoration:'none'}}>

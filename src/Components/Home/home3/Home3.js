@@ -4,6 +4,14 @@ import { withStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
+import truck from './Assets/truck.jpg';
+import dumping_site from './Assets/dumping_site.jpg'
+import machine from './Assets/machine.jpg';
+import machine2 from './Assets/machine2.jpg';
+import machine3 from './Assets/machine3.jpg';
+import machine4 from './Assets/machine4.jpg';
+import machine5 from './Assets/machine5.jpg';
+import recycling from './Assets/recycling.jpg'
 
 const styles = (theme) => ({
   root: {
@@ -88,64 +96,63 @@ function Home3(props) {
 
   const images = [
     {
-      url:
-        'https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=400&q=80',
+      url:'',
       title: 'Haullers',
-      width: '40%',
+      width: '30%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1531299204812-e6d44d9a185c?auto=format&fit=crop&w=400&q=80',
+        'https://as2.ftcdn.net/jpg/03/12/19/75/500_F_312197594_ra1agFw3clmxYa6v9JjHRsxeFHfcvOac.jpg',
       title: 'Recylecling',
-      width: '20%',
+      width: '40%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400&q=80',
+        'http://coparm.net/wp-content/uploads/2015/04/vagli_new-9.jpg',
       title: 'Separators',
-      width: '40%',
+      width: '30%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1453747063559-36695c8771bd?auto=format&fit=crop&w=400&q=80',
+        'http://coparm.net/wp-content/uploads/2015/04/vagli_new-10.jpg',
       title: 'Recycling Plant',
-      width: '38%',
+      width: '30%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1523309996740-d5315f9cc28b?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1574974671999-24b7dfbb0d53?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
       title: 'Workers',
-      width: '38%',
+      width: '40%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=400&q=80',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSE-c-o3SsCIvikqw0ePB1CLEZKAHy3sC7q0A&usqp=CAU',
       title: 'Trucks',
-      width: '24%',
+      width: '30%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1506941433945-99a2aa4bd50a?auto=format&fit=crop&w=400&q=80',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTuZrIU8DqMzjxnyjUxbbgOouAZWP-YUpc8fg&usqp=CAU',
       title: 'Dumping Sites',
-      width: '40%',
+      width: '30%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1533727937480-da3a97967e95?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1503596476-1c12a8ba09a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
       title: 'Recycle',
-      width: '20%',
+      width: '40%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1518136247453-74e7b5265980?auto=format&fit=crop&w=400&q=80',
-      title: '',
-      width: '40%',
+        '',
+      title: 'clients',
+      width: '30%',
     },
   ];
 
   return (
     <Container className={classes.root} component="section">
-      <div style={{marginTop: '-40%'}}>
+      <div style={{marginTop: '-50%'}}>
       <div className={classes.images}>
         {images.map((image) => (
           <ButtonBase

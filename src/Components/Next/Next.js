@@ -76,8 +76,8 @@ const NextPage = () => {
   return (
     <div>
       <Button 
-        style={{ marginTop: '-77%'}}
-        variant='outlined' 
+        style={{ marginTop: '-230%'}}
+        variant='contained' 
         color="primary" 
         onClick={handleClickOpen}
         >

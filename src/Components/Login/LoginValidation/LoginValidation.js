@@ -29,13 +29,19 @@ class LoginValidation extends Component{
                 this.setState({
                     errors:<p>Please Enter Your Username</p>
                 })
+            }else if(this.state.username.length < 3){
+                this.setState({
+                    errors:<p>please your username is too short</p>
+                })
             }else if(this.state.password === ''){
                 this.setState({
                     errors:<p>Please Enter Your Password </p>
                 })
-            }else{
+            }
+            else{
                 this.setState({
-                    success:<p>Thanks for submitting</p>
+                    success:<p>Thanks for submitting</p>,
+                    errors:''
                 })
             }
 
@@ -49,6 +55,7 @@ class LoginValidation extends Component{
                 passwordChanged={this.passwordChangeHandler}
                 submit={this.formSubmit}
                 errorMessage={this.state.errors}
+                successMessage ={this.state.success}
 
             />
 
