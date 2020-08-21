@@ -25,7 +25,7 @@ import Next from '../Components/Next/Next';
 import './App.css'
 import PaymentForm from '../Components/paymentForm/paymentForm';
 import CompanyForm from '../Components/CompanyForm/CompanyForm';
-
+// import ForgotPassword from '../Components/Login/Forgot_password/Password'
 function Copyright() {
   return (
     <Typography 
@@ -33,7 +33,12 @@ function Copyright() {
       color="textSecondary" 
       align="center" 
       style={{
-        color: 'black',marginTop:'100px'
+        color: 'black',
+        position: 'fixed',
+        right: '0',
+        bottom: '0',
+        left: '0',
+        padding: '1rem'
       }}
       >
       {'Copyright © '}
@@ -66,6 +71,7 @@ class App extends Component{
             <Route path ='/order' component={Order} />
             <Route path='/companyform' component={CompanyForm} />
             <Route path ='/login' component={LoginValidation} />
+     
         
             </Switch>
             <Box mt={8}>

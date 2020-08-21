@@ -76,12 +76,12 @@ const NextPage = () => {
   return (
     <div>
       <Button 
-        style={{ marginTop: '-230%'}}
-        variant='contained' 
-        color="primary" 
+        style={{ marginTop: '-274%' , marginLeft:'-300px'}}
+        variant='outlined' 
+        color="secondary" 
         onClick={handleClickOpen}
         >
-        Make a request from here
+        Make a pickup request
       </Button>
         <SimpleDialog 
             selectedValue={selectedValue} 

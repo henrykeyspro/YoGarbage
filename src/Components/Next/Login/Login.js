@@ -42,18 +42,14 @@ const Login = (props) => {
         <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <form className={classes.form} onSubmit={props.submit} >
-          <p style={{color:'red'}}>{props.errorMessage}</p>
-          <p style={{color:'green'}}>{props.successMessage}</p>
+        <form className={classes.form}  >
         
           <TextField
             variant="outlined"
             margin="normal"
             required
-            name="userName"
-            value={props.username}
-            onChange={props.nameChanged}
-            label="Username"
+            name="email"
+            label="Email"
             style={{width:'100%'}}
     
           />
@@ -64,8 +60,6 @@ const Login = (props) => {
             margin="normal"
             required
             name="password"
-            value={props.password}
-            onChange={props.passwordChanged}
             label="Password"
             type="password"
             style={{width:'100% '}}
@@ -77,6 +71,9 @@ const Login = (props) => {
             <Grid item>
               <NavLink to="/password" variant="body2" style={{  float:'left',marginRight:'-285px' , textDecoration:'none'}}>
                 {"Forgot password"}
+              </NavLink>
+              <NavLink to='/signUp' style={{  float:'left', textDecoration:'none'}}>
+                  {'Dont have an account'}
               </NavLink>
             </Grid>
           </Grid>

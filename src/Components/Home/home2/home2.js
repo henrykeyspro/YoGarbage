@@ -82,12 +82,12 @@ function ProductValues(props) {
                     
                     <Paper elevation='20' style={StylesDesktop}>
                     <Typography variant="h4" className={classes.title}>
-                        Garbage Brockrage App
+                        <center>Garbage Brockrage App</center>
                     </Typography>
                     <Typography variant="h6">
                         <ul>
                             <li>
-                            {' Yo-Garbage is a tech management company that bridges the gap between the garbage collection company and the customers who wants our services by monitoring collection companies from polluting the enviroment '}
+                            {' Yo-Garbage is a tech management company that bridges the gap between the garbage collection companies and the customers who wants our services by monitoring collection companies from polluting the enviroment '}
                             </li>
                             <br/>
                             <li>
@@ -107,7 +107,7 @@ function ProductValues(props) {
                     <Paper elevation='20' style={StylesDesktop}>
                         
                     <Typography variant="h4" className={classes.title}>
-                        Why Yo-Garbage?
+                       <center> Why Yo-Garbage?</center>
                     </Typography>
                     <Typography variant="h6">
                         <ul>
@@ -131,7 +131,7 @@ function ProductValues(props) {
                     
                     <Paper elevation='20' style={StylesDesktop}>
                     <Typography variant="h4" className={classes.title}>
-                        Our Purpose
+                        <center>Our Purpose</center>
                     </Typography>
                     <Typography variant="h6">
                         <ul>
@@ -202,7 +202,9 @@ function ProductValues(props) {
                 <Typography variant="h4" className={classes.title}>
                     Why Yo-Garbage?
                 </Typography>
+              
                 <Typography variant="h6">
+                <center>
                     <ul>
                         <li>
                             {'To solve the problems and burdens of garbage.'}
@@ -215,7 +217,10 @@ function ProductValues(props) {
                         </li>
                         
                     </ul>
+                </center>
                 </Typography>
+                
+              
                 </Paper>
                 </div>
             </Grid>

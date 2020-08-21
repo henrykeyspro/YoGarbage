@@ -93,7 +93,7 @@ const HomeMenu = () => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <NavLink to='/' style={{color: 'black'}}>Home</NavLink>
+        <NavLink to='/' style={{color: 'black' ,textDecoration:'none'}}>Home</NavLink>
       </MenuItem>
       <MenuItem>
         <NavLink to='/about' style={{color: 'black'}}>About</NavLink>
@@ -107,16 +107,14 @@ const HomeMenu = () => {
        <MenuItem>
           <NavLink to='/login' style={{color: 'black'}}>Clients </NavLink>
         </MenuItem>
-          <MenuItem>
-            <Button variant='outlined' color='secondary' style={{padding:'2px',color:'black'}}>Login</Button>
-          </MenuItem>
+          
     
     </Menu>
   );
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="static" >
         <Toolbar style={{backgroundColor:'white'}}>
           <IconButton
             edge="start"
@@ -134,23 +132,21 @@ const HomeMenu = () => {
             </Typography>
             
             <IconButton color="inherit">
-            <NavLink to='/' style={{color: 'black'}}>Home</NavLink>
+            <NavLink to='/' style={{color: 'black',textDecoration:'none'}}>Home</NavLink>
             </IconButton>
             <IconButton color="inherit">
-            <NavLink to='/services' style={{color: 'black'}}>Service</NavLink>
+            <NavLink to='/services' style={{color: 'black',textDecoration:'none'}}>Service</NavLink>
             </IconButton>
             <IconButton color="inherit">
-            <NavLink to='/contact' style={{color: 'black'}}>Contact </NavLink>
+            <NavLink to='/contact' style={{color: 'black',textDecoration:'none'}}>Contact </NavLink>
             </IconButton>
             <IconButton>
-            <NavLink to='/about' style={{color: 'black'}}>About </NavLink>
+            <NavLink to='/about' style={{color: 'black',textDecoration:'none'}}>About </NavLink>
             </IconButton>
             <IconButton>
-            <NavLink to='/login' style={{color: 'black'}}>Clients </NavLink>
+            <NavLink to='/login' style={{color: 'black',textDecoration:'none'}}>Clients </NavLink>
             </IconButton>
-            <IconButton>
-                <Button variant='outlined' color='secondary' style={{padding:'2px',color:'black'}}>Login</Button>
-            </IconButton>
+           
           
             <IconButton
               edge="end"

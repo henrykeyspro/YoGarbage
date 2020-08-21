@@ -126,17 +126,14 @@ const Contact = () => {
       <div className='headerr'>
        
         <h1>Contact Us</h1>
-        <div>
-          <Paper elevation='20'>
-            <h2><strong>Location</strong></h2>
-            <p className='para'>Skylla building, plot 23/45 </p>
-            <p className='para'>Mpala, Entebbe road opposite Stabex petro station </p>
-            <p className='para'>P.O.Box 1234 Kampala - Uganda</p>
-          </Paper>
-
+        <div>  
+          <h2><strong>Location</strong></h2>
+          <p className='para'>Skylla building, plot 23/45 </p>
+          <p className='para'>Mpala, Entebbe road opposite Stabex petro station </p>
+          <p className='para'>P.O.Box 1234 Kampala - Uganda</p>
         </div>
         <div>
-        <Paper elevation='20'>
+     
          <strong><h2><strong>Call us on:</strong></h2></strong> 
           <p className='me'>
           <PhoneInTalk 
@@ -168,8 +165,7 @@ const Contact = () => {
           }}
           /> 
           +256 755592204</p>
-      
-        </Paper>
+
         </div>
       </div>
        
