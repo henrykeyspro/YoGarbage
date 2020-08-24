@@ -99,12 +99,14 @@ function Home3(props) {
       url:'',
       title: 'Haullers',
       width: '30%',
+      text:'Am the haulers '
     },
     {
       url:
         'https://as2.ftcdn.net/jpg/03/12/19/75/500_F_312197594_ra1agFw3clmxYa6v9JjHRsxeFHfcvOac.jpg',
       title: 'Recylecling',
       width: '40%',
+      
     },
     {
       url:

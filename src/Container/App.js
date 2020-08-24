@@ -25,6 +25,8 @@ import Next from '../Components/Next/Next';
 import './App.css'
 import PaymentForm from '../Components/paymentForm/paymentForm';
 import CompanyForm from '../Components/CompanyForm/CompanyForm';
+import ClientPage from '../Components/ClientPage/ClientPage';
+import Login from '../Components/Login/Login';
 // import ForgotPassword from '../Components/Login/Forgot_password/Password'
 function Copyright() {
   return (
@@ -52,13 +54,32 @@ function Copyright() {
 }
 
 class App extends Component{
+  state ={
+    user:{}
+  }
+   authListener(){
+     Fire.auth().onAuthStateChanged((user)=>{
+      //  console.log(user);
+       if(user){
+         this.setState({user})
+          localStorage.setItem('user', user.uid);
+       }
+       else{
+         this.setState({user : null})
+         localStorage.removeItem('user')
+       }
+     })
+   }
+   componentDidMount(){
+     this.authListener();
+   }
   render(){
     return(
       <div className='App'>
-     
        
         <Router>
         <HomeMenu />
+        {/* {this.state.user ? (<ClientPage/>) : (< LoginValidation/>)} */}
           <Switch>
             <Route path='/' component={Home} exact/>
             <Route path ='/services' component={Services} />
@@ -71,6 +92,7 @@ class App extends Component{
             <Route path ='/order' component={Order} />
             <Route path='/companyform' component={CompanyForm} />
             <Route path ='/login' component={LoginValidation} />
+            <Route path ='/clientPage' component={ClientPage} />
      
         
             </Switch>

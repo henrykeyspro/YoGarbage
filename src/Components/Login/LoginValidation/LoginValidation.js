@@ -69,13 +69,13 @@ class LoginValidation extends Component{
     render (){
         return(
             <Login 
-                username={this.state.username}
-                password ={this.state.password}
-                nameChanged={this.usernameChangeHandler}
-                passwordChanged={this.passwordChangeHandler}
-                submit={this.formSubmit}
-                errorMessage={this.state.errors}
-                successMessage ={this.state.success}
+                // username={this.state.username}
+                // password ={this.state.password}
+                // nameChanged={this.usernameChangeHandler}
+                // passwordChanged={this.passwordChangeHandler}
+                // submit={this.formSubmit}
+                // errorMessage={this.state.errors}
+                // successMessage ={this.state.success}
 
             />
 

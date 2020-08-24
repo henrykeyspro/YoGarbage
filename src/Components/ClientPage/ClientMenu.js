@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const HomeMenu = () => {
+const ClientMenu = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -182,4 +182,4 @@ const HomeMenu = () => {
     </div>
   );
 }
-export default HomeMenu;
+export default ClientMenu;

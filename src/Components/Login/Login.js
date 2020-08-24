@@ -10,7 +10,9 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { NavLink } from 'react-router-dom';
+import { NavLink ,Link } from 'react-router-dom';
+import Fire from '../../Container/Fire';
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -34,6 +36,21 @@ const useStyles = makeStyles((theme) => ({
 
 const Login = (props) => {
     const classes = useStyles();
+    const [email , setEmail] = useState('');
+    const [password , setPassword] = useState('');
+    const emailChanged =(event)=>{
+      setEmail(event.target.value)
+    }
+    const passwordChanged =(event) =>{
+      setPassword(event.target.value)
+    }
+    
+    const login = (event) =>{
+      event.preventDefault();
+      Fire.auth().signInWithEmailAndPassword(email , password).then((u)=>{}).catch((error)=>{
+        console.log(error)
+      })
+    }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -50,9 +67,9 @@ const Login = (props) => {
             variant="outlined"
             margin="normal"
             required
-            name="userName"
-            value={props.username}
-            onChange={props.nameChanged}
+            name="Email"
+            value={email}
+            onChange={emailChanged}
             label="Username"
             style={{width:'100%'}}
     
@@ -64,8 +81,8 @@ const Login = (props) => {
             margin="normal"
             required
             name="password"
-            value={props.password}
-            onChange={props.passwordChanged}
+            value={password}
+            onChange={passwordChanged}
             label="Password"
             type="password"
             style={{width:'100% '}}
@@ -80,17 +97,21 @@ const Login = (props) => {
               </NavLink>
             </Grid>
           </Grid>
-      
-          <Button
-            type="submit"
-            variant="contained"
-            style={{
-              width:'100% '
-            }}
-        
-          >
-            Login
-          </Button>
+       
+           <NavLink to='clientPage'>
+            <Button
+                type="submit"
+                // onClick={login}
+                variant="contained"
+                style={{
+                  width:'100% '
+                }}
+              >
+                Login
+              </Button>
+           </NavLink>
+         
+    
         </form>
       </div>
     </Container>
