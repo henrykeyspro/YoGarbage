@@ -10,12 +10,10 @@ import {
   Route ,
   Switch 
 } from  'react-router-dom';
-import Services from '../Components/Services/Services'
+
 // import SignUp from '../Components/SignUP/Phone';
 import Home from '../Components/Home/Home';
 import HomeMenu from '../Components/Menu/Menu'
-import Contact from '../Components/Contact/Contact';
-import About from '../Components/About/About'
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Admin from '../Admin/Admin'
@@ -27,6 +25,11 @@ import PaymentForm from '../Components/paymentForm/paymentForm';
 import CompanyForm from '../Components/CompanyForm/CompanyForm';
 import ClientPage from '../Components/ClientPage/ClientPage';
 import Login from '../Components/Login/Login';
+import About from '../Components/About/LandingPage/LandingPage';
+import Contact from '../Components/Contact/LandingPage/LandingPage';
+import Services from '../Components/Services/LandingPage/LandingPage';
+
+
 // import ForgotPassword from '../Components/Login/Forgot_password/Password'
 function Copyright() {
   return (
@@ -84,7 +87,7 @@ class App extends Component{
             <Route path='/' component={Home} exact/>
             <Route path ='/services' component={Services} />
             <Route path ='/signUp' component={Phone}/>
-            <Route path ='/about' component={About} />
+            <Route path ='/about' component ={About} />
             <Route path ='/next' component={Next} />
             <Route path ='/paymentForm' component={PaymentForm} />
             <Route path ='/contact' component={Contact} />

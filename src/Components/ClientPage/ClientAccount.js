@@ -105,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
         <div className={classes.sectionDesktop}>
             <Card className={classes.root}variant="elevation">
                 <CardContent>
-                <h1 style={{float:'left'}}>
+                <h1 style={{float:'left' ,marginTop:'-20px'}}>
                     Account Overview
                 </h1>
                 <div style={styles}>
@@ -116,15 +116,14 @@ const useStyles = makeStyles((theme) => ({
                         <EditIcon />
                     </IconButton>
                     <hr />
-                    <p style={{marginLeft: '10px'}}>
+                    <p style={{margin: '25px'}}>
                         Your Name
                     </p>
-                    <p style={{marginLeft: '10px'}}>
+                    <p style={{margin: '25px'}}>
                         email@gmail.com
                     </p>
-                    <Button style={{marginLeft: '10px', marginBottom: '10px'}} variant='outlined' color='primary'>
-                        Change Password
-                    </Button>
+
+                    
                 </div>
                 <div style={AddresStyles}>
                     <h4 style={{marginLeft: '10px'}}>

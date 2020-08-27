@@ -51,18 +51,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     minHeight: 200,
   },
-  fab: {
-    position: 'absolute',
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
-  },
-  fabGreen: {
-    color: theme.palette.common.white,
-    backgroundColor: green[500],
-    '&:hover': {
-      backgroundColor: green[600],
-    },
-  },
+ 
 }));
 
 const Daily = () => {
@@ -83,26 +72,7 @@ const Daily = () => {
     exit: theme.transitions.duration.leavingScreen,
   };
 
-  const fabs = [
-    {
-      color: 'primary',
-      className: classes.fab,
-      icon: <AddIcon />,
-      label: 'Add',
-    },
-    {
-      color: 'secondary',
-      className: classes.fab,
-      icon: <EditIcon />,
-      label: 'Edit',
-    },
-    {
-      color: 'inherit',
-      className: clsx(classes.fab, classes.fabGreen),
-      icon: <UpIcon />,
-      label: 'Expand',
-    },
-  ];
+  
   const Styles ={
     border: '1px solid #dddddd',
     textAlign: 'left',
@@ -120,14 +90,14 @@ const Daily = () => {
           variant="fullWidth"
           aria-label="action tabs example"
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
+          <Tab label="New Requests" {...a11yProps(0)} />
+          <Tab label="On Going Requests" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
         <TabPanel value={value} index={0} dir={theme.direction}>
         <div>
               <h2>
-                  New Open Requests
+                  New Daily Requests
               </h2>
               <table style={{border: '1px solid black', borderRadius: '7px', width: '100%'}}>
                   <tr style={{border: '1px solid black'}}>
@@ -220,7 +190,7 @@ const Daily = () => {
         <TabPanel value={value} index={1} dir={theme.direction}>
         <div>
               <h2>
-                  New Open Requests
+                  On Going Requests
               </h2>
               <table style={{border: '1px solid black', borderRadius: '7px', width: '100%'}}>
                   <tr style={{border: '1px solid black'}}>

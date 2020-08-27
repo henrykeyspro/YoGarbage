@@ -120,14 +120,14 @@ const Weekly = () => {
           variant="fullWidth"
           aria-label="action tabs example"
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
+          <Tab label="New Requests" {...a11yProps(0)} />
+          <Tab label="Ongoing Requests" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
         <TabPanel value={value} index={0} dir={theme.direction}>
         <div>
               <h2>
-                  New Open Requests
+                  New Weekly Requests
               </h2>
               <table style={{border: '1px solid black', borderRadius: '7px', width: '100%'}}>
                   <tr style={{border: '1px solid black'}}>
@@ -220,7 +220,7 @@ const Weekly = () => {
         <TabPanel value={value} index={1} dir={theme.direction}>
         <div>
               <h2>
-                  New Open Requests
+                 On Going Requests
               </h2>
               <table style={{border: '1px solid black', borderRadius: '7px', width: '100%'}}>
                   <tr style={{border: '1px solid black'}}>

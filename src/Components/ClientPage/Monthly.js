@@ -7,10 +7,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Zoom from '@material-ui/core/Zoom';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
-import EditIcon from '@material-ui/icons/Edit';
-import UpIcon from '@material-ui/icons/KeyboardArrowUp';
 import { green } from '@material-ui/core/colors';
 import Box from '@material-ui/core/Box';
 
@@ -83,26 +79,6 @@ const Monthly = () => {
     exit: theme.transitions.duration.leavingScreen,
   };
 
-  const fabs = [
-    {
-      color: 'primary',
-      className: classes.fab,
-      icon: <AddIcon />,
-      label: 'Add',
-    },
-    {
-      color: 'secondary',
-      className: classes.fab,
-      icon: <EditIcon />,
-      label: 'Edit',
-    },
-    {
-      color: 'inherit',
-      className: clsx(classes.fab, classes.fabGreen),
-      icon: <UpIcon />,
-      label: 'Expand',
-    },
-  ];
   const Styles ={
     border: '1px solid #dddddd',
     textAlign: 'left',
@@ -120,14 +96,14 @@ const Monthly = () => {
           variant="fullWidth"
           aria-label="action tabs example"
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
+          <Tab label="New Request" {...a11yProps(0)} />
+          <Tab label="Ongoing Requests" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
         <TabPanel value={value} index={0} dir={theme.direction}>
         <div>
               <h2>
-                  New Open Requests
+                  New Monthly Requests
               </h2>
               <table style={{border: '1px solid black', borderRadius: '7px', width: '100%'}}>
                   <tr style={{border: '1px solid black'}}>
@@ -220,7 +196,7 @@ const Monthly = () => {
         <TabPanel value={value} index={1} dir={theme.direction}>
         <div>
               <h2>
-                  New Open Requests
+                 On Going Monthly Requests
               </h2>
               <table style={{border: '1px solid black', borderRadius: '7px', width: '100%'}}>
                   <tr style={{border: '1px solid black'}}>

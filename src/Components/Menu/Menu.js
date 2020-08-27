@@ -10,6 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
 import logo from '../Assets/logo.jpg';
 import { NavLink } from 'react-router-dom';
+import NextPage from '../Next/Next';
 // import Button from '@material-ui/core/Button'
 
 const useStyles = makeStyles((theme) => ({
@@ -24,7 +25,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
-      marginRight:'450px'
+      marginRight:'150px',
+      
+
     },
   },
   sectionDesktop: {
@@ -127,10 +130,12 @@ const HomeMenu = () => {
           </IconButton>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <Typography className={classes.title} variant="h4" style={{color:'black',}} noWrap>
+            <Typography className={classes.title} variant="h4" style={{color:'black'}} noWrap>
                 Yo-Garbage
             </Typography>
-            
+         
+              <NextPage />
+      
             <IconButton color="inherit">
             <NavLink to='/' style={{color: 'black',textDecoration:'none'}}>Home</NavLink>
             </IconButton>

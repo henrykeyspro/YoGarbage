@@ -135,34 +135,18 @@ const Contact = () => {
         <div>
      
          <strong><h2><strong>Call us on:</strong></h2></strong> 
-          <p className='me'>
+          <p >
           <PhoneInTalk 
-          
-          color='primary'
-          style={{
-            color:'blue',
-          }}
           />
             +256 753473059
           </p>
-          <p className='me'>
+          <p >
           <PhoneInTalk 
-            
-            color='primary'
-            style={{
-              color:'blue',
-            }}
-            
           />
             +256 704798562 
           </p>
-          <p className='me'>
+          <p >
           <WhatsApp 
-        
-          color='primary'
-          style={{
-          color:'lightgreen'
-          }}
           /> 
           +256 755592204</p>
 

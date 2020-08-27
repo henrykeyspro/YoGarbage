@@ -12,6 +12,7 @@ import Request from './Reqest';
 import Monthly from './Monthly';
 import Daily from './Daily';
 import Weekly from './Weekly';
+import Password from './Password';
 
 const routes = [
   {
@@ -50,6 +51,11 @@ const routes = [
     path: "/customerHistory",
     sidebar: () => <div></div>,
     main: () => <h2>Customer are monitored from here</h2>
+  },
+  {
+    path: "/changePassword",
+    sidebar: () => <div></div>,
+    main: () => <Password />
   },
   {
     path: "/logout",
@@ -181,6 +187,11 @@ const useStyles = makeStyles((theme) => ({
             <li>
               <Link to="/customerHistory" style={Styles}> 
                   <Button style={styles}>Customer History</Button>
+                </Link>
+            </li>
+            <li>
+              <Link to="/changePassword" style={Styles}> 
+                  <Button style={styles}>Change Password</Button>
                 </Link>
             </li>
             <li>
