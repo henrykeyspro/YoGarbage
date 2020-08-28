@@ -13,6 +13,14 @@ import Monthly from './Monthly';
 import Daily from './Daily';
 import Weekly from './Weekly';
 import Password from './Password';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import LocalShippingIcon from '@material-ui/icons/LocalShipping';
+import AirportShuttleIcon from '@material-ui/icons/AirportShuttle';
+import DirectionsCarIcon from '@material-ui/icons/DirectionsCar';
+import HistoryIcon from '@material-ui/icons/History';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import DepartureBoardIcon from '@material-ui/icons/DepartureBoard';
 
 const routes = [
   {
@@ -155,7 +163,7 @@ const useStyles = makeStyles((theme) => ({
             background: "silver",
             margin:'20px',
             borderRadius: '7px',
-            boxShadow: '2px 2px 2px 2px silver  '
+            boxShadow: '2px 2px 2px 2px black  '
           }}
         >
           <ul style={{ listStyleType: "none", padding: 0 }}>
@@ -242,48 +250,62 @@ const useStyles = makeStyles((theme) => ({
       </div>
       <div className={classes.sectionMobile}>
       <Router>
-      <div style={{ display: "flex" }}>
+      <div >
         <div
           style={{
             width: "30%",
-            background: "silver",
-            margin:'10px'
+            background: "white",
+            margin:'10px',
+            borderRadius: '7px',
+            boxShadow: '2px 2px 2px 2px black'
           }}
         >
           <ul style={{ listStyleType: "none", padding: 0 }}>
             <li>
               <Link to="/account" style={Styles}>
-                 <Button style={StylesMobile}>My Account</Button>
+                 <Button style={StylesMobile}><AccountBoxIcon /></Button>
                 </Link>
             </li>
+            <hr />
             <li>
               <Link to="/pickupRequest" style={Styles} >
-                  <Button style={StylesMobile}>Requests</Button>
+                  <Button style={StylesMobile}><LocalShippingIcon /></Button>
                 </Link>
             </li>
+            <hr />
             <li>
               <Link to="/monthlyPickup" style={Styles}>
-                  <Button style={StylesMobile}>Monthly PickUps</Button>
+                  <Button style={StylesMobile}><AirportShuttleIcon /></Button>
                 </Link>
             </li>
+            <hr />
             <li>
               <Link to="/weeklyPickup" style={Styles}>
-                  <Button style={StylesMobile}> Weekly PickUps</Button>
+                  <Button style={StylesMobile}><DirectionsCarIcon /></Button>
                 </Link>
             </li>
+            <hr />
             <li>
               <Link to="/dailyPickup" style={Styles}>
-                  <Button style={StylesMobile}>Daily PickUps</Button>
+                  <Button style={StylesMobile}><DepartureBoardIcon /></Button>
                 </Link>
             </li>
+            <hr />
             <li>
               <Link to="/customerHistory" style={Styles}> 
-                  <Button style={StylesMobile}>Customer History</Button>
+                  <Button style={StylesMobile}><HistoryIcon /></Button>
                 </Link>
             </li>
+            <hr />
+            <li>
+              <Link to="/changePassword" style={Styles}> 
+                  <Button style={StylesMobile}><VpnKeyIcon /></Button>
+                </Link>
+            </li>
+            <hr />
             <li>
               <Link to="/logout" style={Styles}>
-                  <Button style={StylesMobile}>Logout</Button>
+                  <Button style={StylesMobile}><ExitToAppIcon /></Button>
                 </Link>
             </li>
           </ul>
@@ -322,15 +344,9 @@ const useStyles = makeStyles((theme) => ({
           </Switch>
         </div>
       </div>
-    </Router>
-                  
-     
-               
-      </div>
-                
-            
+    </Router>     
+      </div>   
     </div>
-
   );
 }
 export default ClientPage ;

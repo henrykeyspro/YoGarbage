@@ -153,12 +153,12 @@ const useStyles = makeStyles((theme) => ({
 
         <div className={classes.sectionMobile}>
             <Card className={classes.root}variant="outlined">
+                <h3 style={{float:'left', marginLeft: '20px'}}>
+                  Account Overview
+                </h3> 
                 <CardContent>
-                <h3 style={{float:'left'}}>
-                    Account Overview
-                </h3>
                 <div style={MobileStyle}>
-                    <h4 style={{marginLeft: '10px'}}>
+                    <h4 style={{marginLeft:'-5px'}}>
                         Account Details
                     </h4>
                     <IconButton style={{float: 'right', marginTop: '-60px', borderRadius: '30px', color: 'blue'}}>
@@ -171,9 +171,6 @@ const useStyles = makeStyles((theme) => ({
                     <p style={{marginLeft: '10px'}}>
                         email@gmail.com
                     </p>
-                    <Button style={{marginLeft: '3px', marginBottom: '5px', marginRight: '3px'}} variant='outlined' color='primary'>
-                        Change Password
-                    </Button>
                 </div>
                 <div style={MobileStyle}>
                     <h4 style={{marginLeft: '10px'}}>

@@ -4,8 +4,24 @@ import Button from '@material-ui/core/Button'
 import {NavLink } from 'react-router-dom'
 import PaymentForm from '../paymentForm/paymentForm'
 import ArrowBack from '@material-ui/icons/ArrowBack'
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    sectionDesktop: {
+        display: 'none',
+        [theme.breakpoints.up('md')]: {
+          display: 'block',
+        },
+      },
+      sectionMobile: {
+        [theme.breakpoints.up('md')]: {
+          display: 'none',
+        },
+      },
+  }));
 
 const Order =(props)=>{
+    const classes = useStyles();
     // creating states for my inputs in the order page
     const [Fname ,setFName]  = useState('');
     const [Lname , setLname] = useState('');
@@ -51,17 +67,104 @@ const Order =(props)=>{
 
     return(
         <div>
-            <form className='order1'>
-                <NavLink to='/'>
-                    <ArrowBack 
-                        style={{float:'left'}}
-                    />
-                </NavLink>
-               
-                <h2>Welcome to our customer service page</h2>
-        
-                 <h4>Please Enter your details to make an Order </h4>
+            <div className={classes.sectionDesktop}>
+                <form className='order1'>
+                    <NavLink to='/'>
+                        <ArrowBack 
+                            style={{float:'left'}}
+                        />
+                    </NavLink>
                 
+                    <h2>Welcome to our customer service page</h2>
+            
+                    <h4>Please Enter your details to make an Order </h4>
+                    
+                        <TextField  
+                            variant='outlined'
+                            label='FirstName'
+                            name='FName'
+                            type='FName'
+                            autoComplete
+                            onChange={FnameHandler}
+                            value={Fname}
+                            autoFocus={true}
+                            required='required' 
+                            style={{margin:'10px'}}
+                            
+                        />
+                
+                            <TextField  
+                                variant='outlined'
+                                label='LastName'
+                                name='LName'
+                                type='LName'
+                                autoComplete
+                                onChange={LnameHandler}
+                                margin ='normal'
+                                value ={Lname}
+                                autoFocus={true}              
+                                required='required' 
+                                style={{margin:'10px'}}
+                            /> 
+                        
+                    <div>
+                    <TextField  
+                            variant='outlined'
+                            label='email'
+                            name='Email'
+                            type='Email'
+                            autoComplete
+                            margin ='normal'
+                            onChange={EmailHandler}
+                            value={Email}
+                            autoFocus={true}                 
+                            required='required' 
+                            style = {{width: '35%'}}
+                        />
+                    </div>
+                    
+                    <div>
+                            <TextField  
+                                variant='outlined'
+                                label='Phone'
+                                name='Phone'
+                                type='Phone'
+                                autoComplete
+                                margin ='normal'
+                                onChange={PhoneHandler}
+                                value={Phone}
+                                autoFocus={true}                
+                                required='required' 
+                                style={{margin:'10px',width: '35%'}}
+                            />
+                    </div>
+                    
+                    <div>
+                        <TextField  
+                                variant='outlined'
+                                label='Place of residence'
+                                name='Town'
+                                type='Town'
+                                autoComplete
+                                onChange={townHandler}
+                                value={town}
+                                margin ='normal'
+                                autoFocus={true}               
+                                required='required' 
+                                style={{margin:'10px', width: '35%'}}
+                            />
+                    </div>
+                    
+                        <PaymentForm />
+                </form>
+            </div>
+            <div className={classes.sectionMobile}>
+            <form className='order1'>
+                
+                <h2>Welcome to our customer service page</h2>
+            
+                <h4>Please Enter your details to make an Order </h4>
+                    
                     <TextField  
                         variant='outlined'
                         label='FirstName'
@@ -75,7 +178,7 @@ const Order =(props)=>{
                         style={{margin:'10px'}}
                         
                     />
-               
+            
                         <TextField  
                             variant='outlined'
                             label='LastName'
@@ -89,9 +192,9 @@ const Order =(props)=>{
                             required='required' 
                             style={{margin:'10px'}}
                         /> 
-                      
-                   <div>
-                   <TextField  
+                    
+                <div>
+                <TextField  
                         variant='outlined'
                         label='email'
                         name='Email'
@@ -102,11 +205,11 @@ const Order =(props)=>{
                         value={Email}
                         autoFocus={true}                 
                         required='required' 
-                        style = {{width: '35%'}}
+                        style={{margin:'10px'}}
                     />
-                   </div>
-                   
-                   <div>
+                </div>
+                
+                <div>
                         <TextField  
                             variant='outlined'
                             label='Phone'
@@ -118,11 +221,11 @@ const Order =(props)=>{
                             value={Phone}
                             autoFocus={true}                
                             required='required' 
-                            style={{margin:'10px',width: '35%'}}
+                            style={{margin:'10px'}}
                         />
-                   </div>
-                   
-                   <div>
+                </div>
+                
+                <div>
                     <TextField  
                             variant='outlined'
                             label='Place of residence'
@@ -134,20 +237,14 @@ const Order =(props)=>{
                             margin ='normal'
                             autoFocus={true}               
                             required='required' 
-                            style={{margin:'10px', width: '35%'}}
+                            style={{margin:'10px'}}
                         />
-                   </div>
-                    <NavLink to='/paymentForm'>
-                        <Button
-                            variant='contained' 
-                            color='primary'
-                            style={{margin:'10px', width: '35%',TextTransform :'capitalise'}}
-                            
-                        >  Next</Button>
-                    </NavLink>
-                    
-       
-            </form>
+                    </div>
+                
+                    <PaymentForm  />
+                </form>
+            </div>
+           
         </div>
 
     )

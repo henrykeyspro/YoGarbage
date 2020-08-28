@@ -40,7 +40,7 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
+    width: '500',
     position: 'relative',
     minHeight: 200,
   },
@@ -56,7 +56,17 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: green[600],
     },
   },
-  
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'block',
+    },
+  },
+  sectionMobile: {
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
 }));
 
 const Request = () => {
@@ -71,9 +81,17 @@ const Request = () => {
   const Styles ={
     border: '1px solid #dddddd',
     textAlign: 'left',
-    padding: '8px'
+    padding: '8px',
+  }
+  const Style ={
+    border: '1px solid #dddddd',
+    textAlign: 'left',
+    padding: '8px',
+    display: 'block'
   }
   return (
+    <div>
+    <div className={classes.sectionDesktop}>
     <div className={classes.root}>
         <Tabs
           value={value}
@@ -273,6 +291,208 @@ const Request = () => {
               </table>
           </div>
         </TabPanel>
+    </div>
+    </div>
+    <div className={classes.sectionMobile}>
+        <Tabs
+          value={value}
+          className='requst'
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          variant="fullWidth"
+          aria-label="action tabs example"
+        >
+          <Tab label="New Open Requests" {...a11yProps(0)} className='requst'/>
+          <Tab label="On Going Requests" {...a11yProps(1)} className='requst'/>
+        </Tabs>
+        <TabPanel value={value} index={0} dir={theme.direction}>
+          <div>
+              <h2>
+                  New Open Requests
+              </h2>
+              <table style={{border: '1px solid black', borderRadius: '7px', width: '50%'}}>
+                  <tr style={{border: '1px solid black'}}>
+                      <th style={Styles}>
+                          Name
+                      </th>
+                      <th style={Styles}>
+                          Address
+                      </th>
+                      <th style={Styles}>
+                          Phone Number
+                      </th>
+                      <th style={Styles}>
+                          Method Of Payment
+                      </th>
+                  </tr>
+                  <tr style={{border: '1px solid black'}}>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                  </tr>
+                  <tr style={{border: '1px solid black'}}>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                  </tr>
+                  <tr style={{border: '1px solid black'}}>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                  </tr>
+                  <tr style={{border: '1px solid black'}}>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                  </tr>
+                  <tr style={{border: '1px solid black'}}>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                  </tr>
+              </table>
+          </div>
+        </TabPanel>
+        <TabPanel value={value} index={1} dir={theme.direction}>
+        <div>
+            <h2>
+                On Going Requests
+            </h2>
+              <table style={{border: '1px solid black', borderRadius: '7px', width: '50%'}}>
+                  <tr style={{border: '1px solid black'}}>
+                      <th style={Styles}>
+                          Name
+                      </th>
+                      <th style={Styles}>
+                          Address
+                      </th>
+                      <th style={Styles}>
+                          Phone Number
+                      </th>
+                      <th style={Styles}>
+                          Method Of Payment
+                      </th>
+                  </tr>
+                  <tr style={{border: '1px solid black'}}>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                  </tr>
+                  <tr style={{border: '1px solid black'}}>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                  </tr>
+                  <tr style={{border: '1px solid black'}}>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                  </tr>
+                  <tr style={{border: '1px solid black'}}>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                  </tr>
+                  <tr style={{border: '1px solid black'}}>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                      <td style={Styles}>
+                          Test
+                      </td>
+                  </tr>
+              </table>
+          </div>
+        </TabPanel>
+    </div>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React ,{useState} from 'react'
 import TextField  from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import {NavLink } from 'react-router-dom'
+import PaymentForm from '../paymentForm/paymentForm'
 
 const CompanyForm = () =>{
     // creating states for my inputs 
@@ -84,15 +85,7 @@ const CompanyForm = () =>{
                     />
                
                 </div>
-                <NavLink to='/paymentForm' >
-                       <Button 
-                    variant='contained'
-                    color='primary'
-                    style={styles}
-                >Continue</Button>
-                </NavLink>
-             
-
+                <PaymentForm />
             </form>
          
         </div>

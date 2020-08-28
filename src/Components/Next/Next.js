@@ -16,12 +16,23 @@ import { NavLink } from 'react-router-dom';
 const emails = [
     <NavLink to='/companyform' style={{textDecoration: 'none',color:'black'}}>Company</NavLink>, 
     <NavLink to='/order' style={{textDecoration: 'none' , color:'black'}}>Individual</NavLink>];
-const useStyles = makeStyles({
-  avatar: {
-    backgroundColor: blue[100],
-    color: blue[600],
-  },
-});
+    const useStyles = makeStyles((theme) => ({
+      avatar: {
+        backgroundColor: blue[100],
+        color: blue[600],
+      },
+      sectionDesktop: {
+        display: 'none',
+        [theme.breakpoints.up('md')]: {
+          display: 'block',
+        },
+      },
+      sectionMobile: {
+        [theme.breakpoints.up('md')]: {
+          display: 'none',
+        },
+      },
+    }));
 
 function SimpleDialog(props) {
   const classes = useStyles();
@@ -36,6 +47,7 @@ function SimpleDialog(props) {
   };
 
   return (
+    
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
       <DialogTitle id="simple-dialog-title">Request As</DialogTitle>
       <List>
@@ -61,6 +73,7 @@ SimpleDialog.propTypes = {
 };
 
 const NextPage = () => {
+  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [selectedValue, setSelectedValue] = React.useState(emails[1]);
 
@@ -75,19 +88,40 @@ const NextPage = () => {
 
   return (
     <div>
-      <Button 
-        style={{ marginTop: '-274%' , marginLeft:'-1px'}}
-        variant='outlined' 
-        color="secondary" 
-        onClick={handleClickOpen}
-        >
-        Make a pickup request
-      </Button>
-        <SimpleDialog 
-            selectedValue={selectedValue} 
-            open={open} 
-            onClose={handleClose} 
-        />
+      <div className={classes.sectionDesktop}>
+        <div>
+          <Button 
+           
+            variant='outlined' 
+            color="secondary" 
+            onClick={handleClickOpen}
+            >
+            Make a pickup request
+          </Button>
+            <SimpleDialog 
+                selectedValue={selectedValue} 
+                open={open} 
+                onClose={handleClose} 
+            />
+        </div>
+      </div>
+      <div className={classes.sectionMobile}>
+        <div>
+          <Button 
+           style={{height:'30px' , marginBottom:'-30px'}}
+            variant='outlined' 
+            color="secondary" 
+            onClick={handleClickOpen}
+            >
+             Request
+          </Button>
+            <SimpleDialog 
+                selectedValue={selectedValue} 
+                open={open} 
+                onClose={handleClose} 
+            />
+        </div>
+      </div>
     </div>
   );
 }

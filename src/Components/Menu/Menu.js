@@ -95,6 +95,7 @@ const HomeMenu = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+        <h4 style={{ color:'black'}}>Yo-Garbage</h4>
       <MenuItem>
         <NavLink to='/' style={{color: 'black' ,textDecoration:'none'}}>Home</NavLink>
       </MenuItem>
@@ -164,8 +165,8 @@ const HomeMenu = () => {
               {/* <AccountCircle /> */}
             </IconButton>
           </div>
-          <div className={classes.sectionMobile}>
-            <h4 style={{marginRight: '30px ', color:'black'}}>Yo-Garbage</h4>
+          <div className={classes.sectionMobile}>            
+            <NextPage />
             <IconButton>
                 <HomeIcon style={{marginTop: '5px', marginRight: '5px', color: 'white'}} />
             </IconButton>

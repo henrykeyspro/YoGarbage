@@ -89,6 +89,17 @@ const styles = (theme) => ({
     left: 'calc(50% - 9px)',
     transition: theme.transitions.create('opacity'),
   },
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'block',
+    },
+  },
+  sectionMobile: {
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
 });
 
 function Home3(props) {
@@ -153,42 +164,86 @@ function Home3(props) {
   ];
 
   return (
-    <Container className={classes.root} component="section">
-      <div style={{marginTop: '-50%'}}>
-      <div className={classes.images}>
-        {images.map((image) => (
-          <ButtonBase
-            key={image.title}
-            className={classes.imageWrapper}
-            style={{
-              width: image.width,
-              marginBottom: '20px',
-              borderRadius: '10px'
-            }}
-          >
-            <div
-              className={classes.imageSrc}
-              style={{
-                backgroundImage: `url(${image.url})`,
-              }}
-            />
-            <div className={classes.imageBackdrop} />
-            <div className={classes.imageButton}>
-              <Typography
-                component="h3"
-                variant="h6"
-                color="inherit"
-                className={classes.imageTitle}
+    <div>
+      <div className={classes.sectionDesktop}>
+        <Container className={classes.root} component="section">
+          <div style={{marginTop: '-50%'}}>
+          <div className={classes.images}>
+            {images.map((image) => (
+              <ButtonBase
+                key={image.title}
+                className={classes.imageWrapper}
+                style={{
+                  width: image.width,
+                  marginBottom: '20px',
+                  borderRadius: '10px'
+                }}
               >
-                {image.title}
-                <div className={classes.imageMarked} />
-              </Typography>
-            </div>
-          </ButtonBase>
-        ))}
+                <div
+                  className={classes.imageSrc}
+                  style={{
+                    backgroundImage: `url(${image.url})`,
+                  }}
+                />
+                <div className={classes.imageBackdrop} />
+                <div className={classes.imageButton}>
+                  <Typography
+                    component="h3"
+                    variant="h6"
+                    color="inherit"
+                    className={classes.imageTitle}
+                  >
+                    {image.title}
+                    <div className={classes.imageMarked} />
+                  </Typography>
+                </div>
+              </ButtonBase>
+            ))}
+          </div>
+        </div>
+      </Container>
+          
       </div>
+      <div className={classes.sectionMobile}>
+      <Container className={classes.root} component="section" style={{marginTop:'-700px'}}>
+        <div style={{marginTop: '-50%'}}>
+          <div className={classes.images}>
+            {images.map((image) => (
+              <ButtonBase
+                key={image.title}
+                className={classes.imageWrapper}
+                style={{
+                  width: image.width,
+                  marginBottom: '20px',
+                  borderRadius: '10px'
+                }}
+              >
+                <div
+                  className={classes.imageSrc}
+                  style={{
+                    backgroundImage: `url(${image.url})`,
+                  }}
+                />
+                <div className={classes.imageBackdrop} />
+                <div className={classes.imageButton}>
+                  <Typography
+                    component="h3"
+                    variant="h6"
+                    color="inherit"
+                    className={classes.imageTitle}
+                  >
+                    {image.title}
+                    <div className={classes.imageMarked} />
+                  </Typography>
+                </div>
+              </ButtonBase>
+            ))}
+          </div>
+        </div>
+      </Container>
       </div>
-    </Container>
+    </div>
+     
   );
 }
 

@@ -9,8 +9,6 @@ import GridContainer from "../Grid/GridContainer.js";
 import GridItem from "../Grid/GridItem.js";
 
 import styles from "./landingPageSections/workStyle.js";
-import PhoneInTalk from '@material-ui/icons/PhoneInTalk';
-import WhatsApp from '@material-ui/icons/WhatsApp';
 
 const useStyles = makeStyles(styles);
 

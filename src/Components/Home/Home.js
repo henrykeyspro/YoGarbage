@@ -64,7 +64,7 @@ import Home3 from './home3/Home3';
                  </Paper>
                   
                   <ProductValues />
-                  <NextPage /> 
+                 
                   <Home3 />
                      
                    
@@ -75,8 +75,8 @@ import Home3 from './home3/Home3';
                  </Paper>
                   
                   <ProductValues />
-                  <NextPage />   
-                  <Home3 />
+                 
+                  <Home3  />
                 </div>
                 
             

@@ -1,175 +1,138 @@
-import React from 'react'
-import './paymentForm.css'
-import mtn from './Assets/mtn.jpg';
-import airtel from './Assets/airtel.jpg';
-import cash from './Assets/cash.jpg';
-import creditCard from './Assets/creditCard.jpg'
-import Paper from '@material-ui/core/Paper'
-import {makeStyles} from '@material-ui/core'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import InputLabel from '@material-ui/core/InputLabel';
+import Input from '@material-ui/core/Input';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import { NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
-
-       
-    sectionDesktop: {
-      display: 'none',
-      [theme.breakpoints.up('md')]: {
-        display: 'block',
-      },
-    },
-    sectionMobile: {
-      [theme.breakpoints.up('md')]: {
-        display: 'none',
-      },
-    },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
 }));
 
-    const PaymentForm = (props) =>{
-        const classes = useStyles();
-        const [anchorEl, setAnchorEl] = React.useState(null);
-        const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-      
-        const isMenuOpen = Boolean(anchorEl);
-        const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-      
-        const handleProfileMenuOpen = (event) => {
-          setAnchorEl(event.currentTarget);
-        };
-      
-        const handleMobileMenuClose = () => {
-          setMobileMoreAnchorEl(null);
-        };
-      
-        const handleMenuClose = () => {
-          setAnchorEl(null);
-          handleMobileMenuClose();
-        };
-      
-        const handleMobileMenuOpen = (event) => {
-          setMobileMoreAnchorEl(event.currentTarget);
-        };
-      
-        const [color , setColor] = React.useState(null)
-        const colorHandler =(event) =>{
-            setColor(event.target.value);
-        }
-        const styles = {
-            height: '80%',
-            width:  '40%',
-            marginRight:'30%',
-            marginLeft:'30%',
-            backgroundColor:'silver',
-            textAlign: 'left',
-           
-        };
-        const Styles ={
-            height: '30%',
-            width:  '80%',
-            marginRight:'20%',
-            marginLeft:'10%',
-            backgroundColor:'silver',
-            textAlign: 'left',
-        }
-        
+const PaymentForm = () => {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const [age, setAge] = React.useState('');
+  const [amount, setAmount] = React.useState('');
 
-        return(
+  const handleChange = (event) => {
+    setAge(Number(event.target.value) || '');
+  };
+  const handleCategory = (event) => {
+    setAmount(Number(event.target.value) || '');
+  };
 
-            <div>
-        
-                <form >
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
-                 <div className={classes.grow}>
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <Button onClick={handleClickOpen} style={{color:'white' , width: '35%' }} variant='contained' color='primary'>Next</Button>
+      <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
+        <DialogTitle>Category</DialogTitle>
+        <DialogContent>
+          <form className={classes.container}>
+            <FormControl className={classes.formControl}>
+              <InputLabel htmlFor="demo-dialog-native">Choose</InputLabel>
+              <Select
+                native
+                value={amount}
+                onChange={handleCategory}
+                input={<Input id="demo-dialog-native" />}
+              >
+                <option aria-label="None" value="" />
+                <option value={10}>Daily</option>
+                <option value={20}>Weekly</option>
+                <option value={30}>Monthly</option>
+                <option value={40}>One time</option>
+              </Select>
+            </FormControl>
+            <FormControl className={classes.formControl}>
+              <InputLabel id="demo-dialog-select-label">Amount</InputLabel>
+              <Select disabled
+                labelId="demo-dialog-select-label"
+                id="demo-dialog-select"
+                value={amount}
+                onChange={handleCategory}
+                input={<Input />}
+              >
+                <MenuItem value="" >
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={10}>5000 UGX</MenuItem>
+                <MenuItem value={20}>30000 UGX</MenuItem>
+                <MenuItem value={30}> 80000 UGX</MenuItem>
+                <MenuItem value={40}>10000 UGX</MenuItem>
+              </Select>
+            </FormControl>
+          </form>
+        </DialogContent>
+        <DialogTitle>Payment Form</DialogTitle>
+        <DialogContent>
+          <form className={classes.container}>
+            <FormControl className={classes.formControl}>
+              <InputLabel htmlFor="demo-dialog-native">Pay</InputLabel>
+              <Select 
+                native
+                value={age}
+                onChange={handleChange}
+                input={<Input id="demo-dialog-native" />}
+              >
+                <option aria-label="None" value="" />
+                <option value={50}>MTN  Money</option>
+                <option value={60}>Airtel Money</option>
+              </Select>
+            </FormControl>
+            <FormControl className={classes.formControl}>
+              <InputLabel id="demo-dialog-select-label">Number</InputLabel>
+              <Select disabled
+                labelId="demo-dialog-select-label"
+                id="demo-dialog-select"
+                value={age}
+                onChange={handleChange}
+                input={<Input />}
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={50}>O778920621</MenuItem>
+                <MenuItem value={60}>0755592204</MenuItem>
+              </Select>
+            </FormControl>
+          </form>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cancel
+          </Button>
+          <NavLink to='/' >
+            <Button onClick={handleClose} color="primary">
+              Ok
+            </Button>
+          </NavLink>
           
-            
-                    <div className={classes.sectionDesktop}>  
-                    <Paper elevation={30} style={styles}>
-                        <form>
-                            <h3><center>Payment Methods</center> </h3><hr/>
-                            <div>
-                                <label className='mtn'>    
-                                 
-                                 <input type='radio'
-                                 className='radio'
-                                  onChange={colorHandler}
-                                  value='black'
-                                  checked={color === 'black'}
-                                 /><img src={mtn} />  
-                                 MTN MobileMoney
-                                </label>
-                                <br/>
-                                <label className='mtn'>
-                                  <input type='radio' 
-                                   className='radio'
-                                   checked={color === 'blue'}
-                                   onChange={colorHandler}
-                                   value='blue'
-                                 /><img src={airtel} />  
-                                  Airtel Money
-                                </label>
-                                <br/>
-                                <label className='mtn'>
-
-                                  <input type='radio'
-                                   className='radio'
-                                   checked={color === 'green'}
-                                   onChange={colorHandler} 
-                                   value='green'
-                                  /><img src={cash} />
-                                   Cash On Delivery
-                                </label>
-                            </div>
-                        </form>
-
-                    </Paper>   
-              
-                    </div>
-                    <div className={classes.sectionMobile}>
-                    <Paper elevation={30} style={Styles}>
-                        <form>
-                            <h3><center>Payment Methods</center> </h3><hr/>
-                            <div>
-                                <label className='airtel'>    
-                                 
-                                 <input type='radio'
-                                 className='radio1'
-                                  onChange={colorHandler}
-                                  value='black'
-                                  checked={color === 'black'}
-                                 /><img src={mtn} />  
-                                 MTN MobileMoney
-                                </label>
-                                <br/>
-                                <label className='airtel'>
-                                  <input type='radio' 
-                                   className='radio1'
-                                   checked={color === 'blue'}
-                                   onChange={colorHandler}
-                                   value='blue'
-                                 /><img src={airtel} />  
-                                  Airtel Money
-                                </label>
-                                <br/>
-                                <label className='airtel'>
-
-                                  <input type='radio'
-                                   className='radio1'
-                                   checked={color === 'green'}
-                                   onChange={colorHandler} 
-                                   value='green'
-                                  /><img src={cash} />
-                                   Cash On Delivery
-                                </label>
-                            </div>
-                        </form>
-
-                    </Paper>
-
-                    </div>
-           
-       
-                 </div>
-                    
-                </form>
-            </div>
-        )
-    }
-    export default PaymentForm;
+        </DialogActions>
+      </Dialog>
+    </div>
+  );
+}
+export default PaymentForm;
