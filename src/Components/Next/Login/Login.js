@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { NavLink } from 'react-router-dom';
+import { Formik, Form, ErrorMessage } from 'formik';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -32,6 +33,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 const Login = (props) => {
     const classes = useStyles();
 
@@ -42,8 +45,30 @@ const Login = (props) => {
         <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <form className={classes.form}  >
-        
+
+        <Formik
+       initialValues={{ email: '', password: '' }}
+       validate={values => {
+         const errors = {};
+         if (!values.email) {
+           errors.email = 'Required';
+         } else if (
+           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+         ) {
+           errors.email = 'Invalid email address';
+         }
+         return errors;
+       }}
+       onSubmit={(values, { setSubmitting }) => {
+         setTimeout(() => {
+           alert(JSON.stringify(values, null, 2));
+           setSubmitting(false);
+         }, 400);
+       }}
+     >
+       {({ isSubmitting }) => (
+         <Form>
+           
           <TextField
             variant="outlined"
             margin="normal"
@@ -53,8 +78,7 @@ const Login = (props) => {
             style={{width:'100%'}}
     
           />
-       
-          {/* TextField for inputting passord for login */}
+           <ErrorMessage name="email" component="div" />
           <TextField
             variant="outlined"
             margin="normal"
@@ -66,8 +90,18 @@ const Login = (props) => {
             id="password"
             autoComplete="current-password"
           />
- 
-          <Grid container>
+           <ErrorMessage name="password" component="div" />
+           <Button type="submit"
+              disabled={isSubmitting}
+              variant="contained"
+              type="submit"
+              style={{
+                width:'100% '
+              }}
+            >
+             Submit
+           </Button>
+           <Grid container>
             <Grid item>
               <NavLink to="/password" variant="body2" style={{  float:'left',marginRight:'-285px' , textDecoration:'none'}}>
                 {"Forgot password"}
@@ -77,18 +111,14 @@ const Login = (props) => {
               </NavLink>
             </Grid>
           </Grid>
-      
-          <Button
-            type="submit"
-            variant="contained"
-            style={{
-              width:'100% '
-            }}
+         </Form>
+       )}
+     </Formik>
+        {/* <form className={classes.form}  > */}
         
-          >
-            Login
-          </Button>
-        </form>
+       
+          {/* TextField for inputting passord for login */}
+          
       </div>
     </Container>
   );

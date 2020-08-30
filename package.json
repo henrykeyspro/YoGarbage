@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
     "firebase": "^7.17.1",
+    "formik": "^2.1.5",
     "radium": "^0.26.0",
     "react": "^16.13.0",
     "react-alice-carousel": "^1.19.3",
@@ -21,7 +22,8 @@
     "react-scripts": "3.4.0",
     "react-select": "^3.1.0",
     "react-simple-image-slider": "^1.0.4",
-    "react-slideshow-image": "^3.0.2"
+    "react-slideshow-image": "^3.0.2",
+    "yup": "^0.29.3"
   },
   "scripts": {
     "start": "react-scripts start",

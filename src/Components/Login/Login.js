@@ -12,6 +12,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { NavLink ,Link } from 'react-router-dom';
 import Fire from '../../Container/Fire';
+import FormField from "./FormField";
+import {useFormik}from 'formik'
+import * as yup from 'yup'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -34,23 +37,42 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Login = (props) => {
-    const classes = useStyles();
-    const [email , setEmail] = useState('');
-    const [password , setPassword] = useState('');
-    const emailChanged =(event)=>{
-      setEmail(event.target.value)
-    }
-    const passwordChanged =(event) =>{
-      setPassword(event.target.value)
-    }
+
     
-    const login = (event) =>{
-      event.preventDefault();
-      Fire.auth().signInWithEmailAndPassword(email , password).then((u)=>{}).catch((error)=>{
-        console.log(error)
-      })
-    }
+    const initialValues = {
+      email: "",
+      password: "",
+     
+    };
+    const validationSchema = yup.object().shape({
+      email: yup
+        .string()
+        .email()
+        .required("Email is a required field"),
+      password: yup
+        .string()
+        .required("Please enter your password")
+        .matches(
+          /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+          "Password must contain at least 8 characters, one uppercase, one number and one special case character"
+        )
+    });
+    
+    const Login = ({onSubmit}) =>{
+      const classes = useStyles();
+    //   event.preventDefault();
+    //   Fire.auth().signInWithEmailAndPassword(email , password).then((u)=>{}).catch((error)=>{
+    //     console.log(error)
+    //   })
+    // }
+    const formik = useFormik({
+      initialValues,
+      validationSchema,
+      onSubmit
+    });
+    const emailProps = formik.getFieldProps("email");
+    const passwordProps = formik.getFieldProps('password');
+  
 
   return (
     <Container component="main" maxWidth="xs">
@@ -59,36 +81,39 @@ const Login = (props) => {
         <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <form className={classes.form} onSubmit={props.submit} >
-          <p style={{color:'red'}}>{props.errorMessage}</p>
-          <p style={{color:'green'}}>{props.successMessage}</p>
+        <form className={classes.form} onSubmit={formik.handleSubmit} >
         
           <TextField
             variant="outlined"
             margin="normal"
             required
-            name="Email"
-            value={email}
-            onChange={emailChanged}
+            name="email"
+            type='email'
+            id='email'
             label="Username"
             style={{width:'100%'}}
-    
+            {...emailProps}
           />
        
-          {/* TextField for inputting passord for login */}
+          {formik.touched.email && formik.errors.email ? (
+            <div>{formik.errors.email}</div>
+          ) : null}
           <TextField
             variant="outlined"
             margin="normal"
             required
             name="password"
-            value={password}
-            onChange={passwordChanged}
             label="Password"
             type="password"
             style={{width:'100% '}}
             id="password"
             autoComplete="current-password"
+            {...passwordProps}
           />
+          {formik.touched.password && formik.errors.password ? (
+           <div>{formik.errors.password}</div>
+          ) : null}
+ 
  
           <Grid container>
             <Grid item>
@@ -97,11 +122,10 @@ const Login = (props) => {
               </NavLink>
             </Grid>
           </Grid>
-       
-           <NavLink to='clientPage'>
+
             <Button
                 type="submit"
-                // onClick={login}
+                disabled={!(formik.isValid && formik.dirty)}
                 variant="contained"
                 style={{
                   width:'100% '
@@ -109,9 +133,6 @@ const Login = (props) => {
               >
                 Login
               </Button>
-           </NavLink>
-         
-    
         </form>
       </div>
     </Container>

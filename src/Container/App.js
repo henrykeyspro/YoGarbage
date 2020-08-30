@@ -94,10 +94,9 @@ class App extends Component{
             <Route path ='/admin' component={Admin} />
             <Route path ='/order' component={Order} />
             <Route path='/companyform' component={CompanyForm} />
-            <Route path ='/login' component={LoginValidation} />
+            <Route path="/login" render={props => ( <Login onSubmit={value => { props.history.push("/clientPage"); }} />)}/>
             <Route path ='/clientPage' component={ClientPage} />
-     
-        
+         
             </Switch>
             <Box mt={8}>
             <Copyright />
