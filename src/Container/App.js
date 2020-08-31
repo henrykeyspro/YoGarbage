@@ -28,33 +28,34 @@ import Login from '../Components/Login/Login';
 import About from '../Components/About/LandingPage/LandingPage';
 import Contact from '../Components/Contact/LandingPage/LandingPage';
 import Services from '../Components/Services/LandingPage/LandingPage';
+import { TopFooter, BottomFooter } from '../Components/Footer/Footer';
 
 
 // import ForgotPassword from '../Components/Login/Forgot_password/Password'
-function Copyright() {
-  return (
-    <Typography 
-      variant="body2" 
-      color="textSecondary" 
-      align="center" 
-      style={{
-        color: 'black',
-        position: 'fixed',
-        right: '0',
-        bottom: '0',
-        left: '0',
-        padding: '1rem'
-      }}
-      >
-      {'Copyright © '}
-      <Link color="inherit" href="/">
-        YoGarbage
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+// function Copyright() {
+//   return (
+//     <Typography 
+//       variant="body2" 
+//       color="textSecondary" 
+//       align="center" 
+//       style={{
+//         color: 'black',
+//         position: 'fixed',
+//         right: '0',
+//         bottom: '0',
+//         left: '0',
+//         padding: '1rem'
+//       }}
+//       >
+//       {'Copyright © '}
+//       <Link color="inherit" href="/">
+//         YoGarbage
+//       </Link>{' '}
+//       {new Date().getFullYear()}
+//       {'.'}
+//     </Typography>
+//   );
+// }
 
 class App extends Component{
   state ={
@@ -98,9 +99,9 @@ class App extends Component{
             <Route path ='/clientPage' component={ClientPage} />
          
             </Switch>
-            <Box mt={8}>
+            {/* <Box mt={8}>
             <Copyright />
-          </Box>
+          </Box> */}
         </Router>
        <span>
          {/* <hr  style={{border:"1px solid blue" , borderRight:'1px solid blue', borderLeft:'1px solid blue' }}/>
@@ -109,6 +110,8 @@ class App extends Component{
           <p> &copy; YoGarbage All Rights reserved </p>
         </footer> */}
       </span>
+      {/* <TopFooter /> */}
+      <BottomFooter />
       </div> 
       
        

@@ -90,14 +90,16 @@ const useStyles = makeStyles((theme) => ({
             name="email"
             type='email'
             id='email'
-            label="Username"
+            label="Email"
             style={{width:'100%'}}
             {...emailProps}
           />
        
+          <span style={{color:'red'}}>
           {formik.touched.email && formik.errors.email ? (
             <div>{formik.errors.email}</div>
           ) : null}
+          </span>
           <TextField
             variant="outlined"
             margin="normal"
@@ -110,9 +112,11 @@ const useStyles = makeStyles((theme) => ({
             autoComplete="current-password"
             {...passwordProps}
           />
-          {formik.touched.password && formik.errors.password ? (
+        <span style={{color:'red'}}>
+        {formik.touched.password && formik.errors.password ? (
            <div>{formik.errors.password}</div>
           ) : null}
+        </span>
  
  
           <Grid container>
