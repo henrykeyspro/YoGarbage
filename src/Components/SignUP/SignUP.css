@@ -1,0 +1,42 @@
+body{
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+Button{
+    padding: 5px;
+    margin: 3px 3px 3px 3px ;
+
+}
+Button:hover{
+    background-color: red;
+    color: black;
+    border-radius: 10px;
+    
+
+}
+TextField{
+    padding: 5px;
+    margin: 5px;
+    max-width: 10px;
+}
+img{
+ width : 5%;
+ height: 5%;
+
+}
+.signup{
+ left:50%;
+ right: 50%;
+ border: 30px;
+ border-radius: 30px;       
+ background-color: rgba(67, 64, 64, 0.04);                
+ margin-left: 500px;
+ margin-right: 500px;
+ height: 650px;
+ margin-top: 50px;
+ opacity: 80%;
+}
+.PhoneInput:hover{
+     border-color: grey;
+}

@@ -1,0 +1,38 @@
+.headerr{
+    text-align: left;
+    margin-right: 370px;
+}
+
+.header{
+    margin-right: 170px;
+    margin-top: -20px;
+}
+
+footer{
+    bottom: 0 ;
+}
+
+.mobileForm{
+   display: inline;
+   margin-right: -70px;
+}
+
+.desktopform{
+    margin-left: -70px;
+}
+.me{
+    margin-right: 260px;
+}
+
+@media only screen and (max-width: 600px) {
+    .mobileForm {
+        width:100%;
+        
+    }
+    .contact{
+        text-align: left;
+    }
+    .head{
+        width: 100%;
+    }
+} 
